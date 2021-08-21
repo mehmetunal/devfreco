@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Dev.Core.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using Dev.Core.Model;
-using Operators = Dev.Core.Model.Operators;
 
 namespace Dev.Core.Extensions
 {
@@ -73,5 +72,4 @@ namespace Dev.Core.Extensions
             return q;
         }
     }
-}
 }
