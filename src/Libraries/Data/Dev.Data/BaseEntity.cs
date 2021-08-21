@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dev.Data.Mssql
+namespace Dev.Data
 {
-    public interface IPrimaryKey
-    {
-    }
-
-    public interface IPrimaryKey<TKey> : IPrimaryKey
+    public partial class BaseEntity : IBaseEntity
     {
     }
 }

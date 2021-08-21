@@ -1,7 +1,7 @@
 ﻿using Dev.Core.Entities;
 using System;
 
-namespace Dev.Data
+namespace Dev.Data.Npgsql
 {
     [Serializable]
     public class BaseEntity : BaseEntity<Guid>
@@ -9,7 +9,7 @@ namespace Dev.Data
     }
 
     [Serializable]
-    public abstract class BaseEntity<TKey> : IBaseEntity<TKey>, IEntity
+    public abstract class BaseEntity<TKey> : Data.BaseEntity, IBaseEntity<TKey>, IEntity
     {
         public BaseEntity()
         {

@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Dev.Data.Mongo\Dev.Data.Mongo.csproj" />
+    <ProjectReference Include="..\Dev.Core\Dev.Core.csproj" />
+  </ItemGroup>
+
 </Project>

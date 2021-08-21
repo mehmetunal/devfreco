@@ -1,10 +1,9 @@
-﻿using Dev.Core.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using Dev.Core.Entities;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dev.Core.Repository
 {

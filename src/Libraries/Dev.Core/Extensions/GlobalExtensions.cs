@@ -1,10 +1,8 @@
 ﻿using Dev.Core.Entities;
+using Dev.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dev.Core.Model;
 
 namespace Dev.Core.Extensions
 {
