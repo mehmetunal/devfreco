@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.AccessControl;
 using System.Text;
 
@@ -212,6 +213,20 @@ namespace Dev.Core.IO
         /// that match the specified search pattern, or an empty array if no files are found.
         /// </returns>
         string[] GetFiles(string directoryPath, string searchPattern = "", bool topDirectoryOnly = true);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="list"></param>
+        List<string> PrintDirectoryTree(string path, string searchPattern = "", bool topDirectoryOnly = true, List<string> list = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directoryPath"></param>
+        /// <param name="searchPattern"></param>
+        /// <returns></returns>
+        string[] GetFileSystemEntries(string directoryPath, string searchPattern = "");
 
         /// <summary>
         /// Returns the date and time the specified file or directory was last accessed

@@ -57,7 +57,7 @@ namespace Dev.Core.IO
         public DirectoryInfo FolderCreat(string path)
             => !Directory.Exists(path)
                 ? Directory.CreateDirectory(path)
-                : throw new FileLoadException("The record already exists.");
+                : new DirectoryInfo(path);
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace Dev.Core.IO
         /// <param name="fileName"></param>
         /// <returns></returns>
         /// <exception cref="FileLoadException"></exception>
-        public async Task<FileResponseModel> FilesCreatAsync(string createdPath, IFormFile file, string fileName)
+        public FileResponseModel FilesCreat(string createdPath, IFormFile file, string fileName)
         {
             var model = new FileResponseModel();
             model.FileInfo = new FileInfo(file.FileName);
@@ -173,7 +173,7 @@ namespace Dev.Core.IO
             if (!Directory.Exists(model.Path))
             {
                 model.FileSize = FormatFileSize(file.OpenReadStream().Length);
-                await Save(file, model);
+                Save(file, model);
                 model.IsFolder = false;
                 model.IsSuccess = true;
                 return model;
@@ -182,7 +182,7 @@ namespace Dev.Core.IO
             throw new FileLoadException("The record already exists.");
         }
 
-        public async Task<FileResponseModel> FilesEditNameAsync(string path, IFormFile file, string newFileName)
+        public FileResponseModel FilesEditName(string path, IFormFile file, string newFileName)
         {
             if (Directory.Exists(path))
                 throw new FileLoadException("Such a record could not be reached");
@@ -204,11 +204,40 @@ namespace Dev.Core.IO
             model.Path = newPath;
 
             model.FileSize = FormatFileSize(file.OpenReadStream().Length);
-            await Save(file, model);
+            Save(file, model);
             model.IsFolder = false;
             model.IsSuccess = true;
 
             return model;
+        }
+
+        /// <summary>
+        /// MergeChunks
+        /// </summary>
+        /// <param name="newPath"></param>
+        /// <param name="filePath"></param>
+        public void MergeChunks(string newPath, string filePath)
+        {
+            FileStream fs1 = null;
+            FileStream fs2 = null;
+            try
+            {
+                fs1 = File.Open(newPath, FileMode.Append);
+                fs2 = File.Open(filePath, FileMode.Open);
+                byte[] fs2Content = new byte[fs2.Length];
+                fs2.Read(fs2Content, 0, (int)fs2.Length);
+                fs1.Write(fs2Content, 0, (int)fs2.Length);
+            }
+            catch (Exception ex)
+            {
+                throw new FileLoadException(ex.Message);
+            }
+            finally
+            {
+                if (fs1 != null) fs1.Close();
+                if (fs2 != null) fs2.Close();
+                Delete(filePath);
+            }
         }
 
         /// <summary>
@@ -217,13 +246,17 @@ namespace Dev.Core.IO
         /// <param name="file"></param>
         /// <param name="model"></param>
         /// <returns></returns>
-        private async Task Save(IFormFile file, FileResponseModel model)
+        private void Save(IFormFile file, FileResponseModel model)
         {
             if (file.Length > 0)
             {
-                using (var stream = System.IO.File.Create(model.Path))
+                using (FileStream fs = File.Create(model.Path))
                 {
-                    await file.CopyToAsync(stream);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        file.CopyTo(ms);
+                        fs.Write(ms.ToArray());
+                    }
                 }
             }
         }

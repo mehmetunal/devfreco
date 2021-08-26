@@ -395,6 +395,54 @@ namespace Dev.Core.IO
         }
 
         /// <summary>
+        /// PrintDirectoryTree
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="list"></param>
+        public List<string> PrintDirectoryTree(string path, string searchPattern = "", bool topDirectoryOnly = true, List<string> list = null)
+        {
+            if (string.IsNullOrEmpty(searchPattern))
+                searchPattern = "*.*";
+
+            list = list == null ? new List<string>() : list;
+
+            string[] fl = Directory.GetFiles(path, searchPattern,
+                topDirectoryOnly ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories);
+
+            string[] dl = Directory.GetDirectories(path, searchPattern,
+                topDirectoryOnly ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories);
+
+            if (fl.Length > 0 || dl.Length > 0)
+            {
+                //I begin with the files, and store all of them in the list
+                foreach (string s in fl)
+                    list.Add(s);
+                //I then add the directory and recurse that directory, the process will repeat until there are no more files and directories to recurse
+                foreach (string s in dl)
+                {
+                    list.Add(s);
+                    PrintDirectoryTree(s, list: list);
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directoryPath"></param>
+        /// <param name="searchPattern"></param>
+        /// <param name="topDirectoryOnly"></param>
+        /// <returns></returns>
+        public virtual string[] GetFileSystemEntries(string directoryPath, string searchPattern = "")
+        {
+            if (string.IsNullOrEmpty(searchPattern))
+                searchPattern = "*.*";
+
+            return Directory.GetFileSystemEntries(directoryPath, searchPattern, SearchOption.AllDirectories);
+        }
+        /// <summary>
         /// Returns the date and time the specified file or directory was last accessed
         /// </summary>
         /// <param name="path">The file or directory for which to obtain access date and time information</param>

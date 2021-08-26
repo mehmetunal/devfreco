@@ -32,7 +32,7 @@ namespace Dev.Core.IO
         /// <param name="file"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        Task<FileResponseModel> FilesCreatAsync(string createdPath, IFormFile file, string fileName);
+        FileResponseModel FilesCreat(string createdPath, IFormFile file, string fileName);
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +40,7 @@ namespace Dev.Core.IO
         /// <param name="file"></param>
         /// <param name="newFileName"></param>
         /// <returns></returns>
-        Task<FileResponseModel> FilesEditNameAsync(string path, IFormFile file, string newFileName);
+        FileResponseModel FilesEditName(string path, IFormFile file, string newFileName);
         /// <summary>
         /// 
         /// </summary>
@@ -53,5 +53,12 @@ namespace Dev.Core.IO
         /// <param name="bytes"></param>
         /// <returns></returns>
         string FormatFileSize(long bytes);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newPath"></param>
+        /// <param name="filePath"></param>
+        void MergeChunks(string newPath, string filePath);
     }
 }
