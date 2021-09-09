@@ -25,6 +25,7 @@ namespace Dev.Core.IO
         FileManagerResponse Upload(string path, IList<IFormFile> uploadFiles, string action, string[] replacedItemNames, params object[] data);
         FileStreamResult GetImage(string path, bool allowCompress, params object[] data);
         FileStreamResult DownloadFile(string path, string[] names = null);
+        FileStreamResult DownloadZip(string path, string[] names = null, string zipName = "file.zip");
         void DeleteDirectory(string path);
         FileManagerDirectoryContent GetFileDetails(string path);
         string ToCamelCase(FileManagerResponse userData);

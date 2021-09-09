@@ -769,7 +769,7 @@ namespace Dev.Core.IO
                     {
                         FileStream fileStreamInput = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.Delete);
                         fileStreamResult = new FileStreamResult(fileStreamInput, "APPLICATION/octet-stream");
-                        fileStreamResult.FileDownloadName = "files.zip";
+                        fileStreamResult.FileDownloadName = "file.zip";
                     }
                     catch (Exception)
                     {
@@ -858,7 +858,7 @@ namespace Dev.Core.IO
                     }
                     FileStream fileStreamInput = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.Delete);
                     fileStreamResult = new FileStreamResult(fileStreamInput, "application/force-download");
-                    fileStreamResult.FileDownloadName = "folders.zip";
+                    fileStreamResult.FileDownloadName = "folder.zip";
                 }
                 if (File.Exists(tempPath))
                 {
@@ -870,6 +870,53 @@ namespace Dev.Core.IO
             {
                 return null;
             }
+        }
+
+        public FileStreamResult DownloadZip(string path, string[] names = null, string zipName = "file.zip")
+        {
+            path = Path.GetDirectoryName(path);
+            var tempPath = Path.Combine(Path.GetTempPath(), zipName);
+            if (File.Exists(tempPath) == true)
+                File.Delete(tempPath);
+
+            string currentDirectory;
+            ZipArchiveEntry zipEntry;
+            ZipArchive archive;
+            for (int i = 0; i < names.Count(); i++)
+            {
+                string fullPath = Path.Combine((contentRootPath + path), names[i]);
+                if (!string.IsNullOrEmpty(fullPath))
+                {
+                    try
+                    {
+                        using (archive = ZipFile.Open(tempPath, ZipArchiveMode.Update))
+                        {
+                            currentDirectory = Path.Combine((contentRootPath + path), names[i]);
+                            zipEntry = archive.CreateEntryFromFile(Path.Combine(this.contentRootPath, currentDirectory), names[i], CompressionLevel.Fastest);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    throw new ArgumentNullException("name should not be null");
+                }
+            }
+            try
+            {
+                FileStream fileStreamInput = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.Delete);
+                fileStreamResult = new FileStreamResult(fileStreamInput, "APPLICATION/octet-stream");
+                fileStreamResult.FileDownloadName = zipName;
+                return fileStreamResult;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            return fileStreamResult;
         }
         private void DirectoryCopy(string sourceDirName, string destDirName, string[] replacedItemNames, string action)
         {
@@ -986,5 +1033,6 @@ namespace Dev.Core.IO
                 }
             });
         }
+
     }
 }
