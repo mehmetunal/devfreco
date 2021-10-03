@@ -17,13 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Npgsql", "Libraries\Dev
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{57BB0453-C17A-45EF-80B3-6F60F61A2F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Framework", "Presentation\Dev.Framework\Dev.Framework.csproj", "{1C9B9C72-8451-420B-9AA1-0D1A6A17C19B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Framework", "Presentation\Dev.Framework\Dev.Framework.csproj", "{1C9B9C72-8451-420B-9AA1-0D1A6A17C19B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0C64D20C-6DF0-45B7-B539-9DE066A145BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dto", "Dto", "{4F056C78-5586-4D84-A27E-1A8C312C03B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Dto.Npgsql", "Libraries\Dto\Dev.Dto.Npgsql\Dev.Dto.Npgsql.csproj", "{45514F86-D585-4C0A-BA6C-EA6714AA9939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Dto.Npgsql", "Libraries\Dto\Dev.Dto.Npgsql\Dev.Dto.Npgsql.csproj", "{45514F86-D585-4C0A-BA6C-EA6714AA9939}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Data", "Libraries\Data\Dev.Data\Dev.Data.csproj", "{1C3CDD5A-23F3-44F0-98F6-695B200E702F}"
 EndProject
@@ -31,13 +31,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Data.Mongo", "Libraries
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Data.Npgsql", "Libraries\Data\Dev.Data.Npgsql\Dev.Data.Npgsql.csproj", "{D23B35B8-6743-4DE1-992F-27C852FCBEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Dto.Mongo", "Libraries\Dto\Dev.Dto.Mongo\Dev.Dto.Mongo.csproj", "{76B1B0C0-5B6F-40A1-A3B7-DF0E05CEB091}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Dto.Mongo", "Libraries\Dto\Dev.Dto.Mongo\Dev.Dto.Mongo.csproj", "{76B1B0C0-5B6F-40A1-A3B7-DF0E05CEB091}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Dto.Mssql", "Libraries\Dto\Dev.Dto.Mssql\Dev.Dto.Mssql.csproj", "{36DA7773-F2CD-4DA4-A059-02FD3F1AB7B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Dto.Mssql", "Libraries\Dto\Dev.Dto.Mssql\Dev.Dto.Mssql.csproj", "{36DA7773-F2CD-4DA4-A059-02FD3F1AB7B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Data.Mssql", "Libraries\Data\Dev.Data.Mssql\Dev.Data.Mssql.csproj", "{3FDCC0C7-89F7-4EDB-8928-A09F0E2A433B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Data.Mssql", "Libraries\Data\Dev.Data.Mssql\Dev.Data.Mssql.csproj", "{3FDCC0C7-89F7-4EDB-8928-A09F0E2A433B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Services", "Libraries\Dev.Services\Dev.Services.csproj", "{251986C4-229E-4EDE-8A16-B1D6F0295DCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspect", "Aspect", "{7454A2BA-DA99-452E-9AA1-B047D1D22105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Aspect.Core", "Libraries\Aspect\Dev.Aspect.Core\Dev.Aspect.Core.csproj", "{D27BF2CD-263E-4674-902D-78858CF822BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache", "Cache", "{B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Cache", "Libraries\Cache\Dev.Cache\Dev.Cache.csproj", "{98329401-C441-4862-B5CB-C30F9F4E0B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Cache.Redis", "Dev.Cache.Redis\Dev.Cache.Redis.csproj", "{104F3342-F1E4-4085-84C9-C08B97DB8000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +107,18 @@ Global
 		{251986C4-229E-4EDE-8A16-B1D6F0295DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{251986C4-229E-4EDE-8A16-B1D6F0295DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{251986C4-229E-4EDE-8A16-B1D6F0295DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27BF2CD-263E-4674-902D-78858CF822BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27BF2CD-263E-4674-902D-78858CF822BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27BF2CD-263E-4674-902D-78858CF822BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27BF2CD-263E-4674-902D-78858CF822BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98329401-C441-4862-B5CB-C30F9F4E0B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98329401-C441-4862-B5CB-C30F9F4E0B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98329401-C441-4862-B5CB-C30F9F4E0B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98329401-C441-4862-B5CB-C30F9F4E0B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104F3342-F1E4-4085-84C9-C08B97DB8000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104F3342-F1E4-4085-84C9-C08B97DB8000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104F3342-F1E4-4085-84C9-C08B97DB8000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104F3342-F1E4-4085-84C9-C08B97DB8000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +141,11 @@ Global
 		{36DA7773-F2CD-4DA4-A059-02FD3F1AB7B1} = {4F056C78-5586-4D84-A27E-1A8C312C03B6}
 		{3FDCC0C7-89F7-4EDB-8928-A09F0E2A433B} = {0C64D20C-6DF0-45B7-B539-9DE066A145BE}
 		{251986C4-229E-4EDE-8A16-B1D6F0295DCC} = {69FA5BF1-2C7B-4289-B482-0E7F25D41748}
+		{7454A2BA-DA99-452E-9AA1-B047D1D22105} = {69FA5BF1-2C7B-4289-B482-0E7F25D41748}
+		{D27BF2CD-263E-4674-902D-78858CF822BF} = {7454A2BA-DA99-452E-9AA1-B047D1D22105}
+		{B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B} = {69FA5BF1-2C7B-4289-B482-0E7F25D41748}
+		{98329401-C441-4862-B5CB-C30F9F4E0B90} = {B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}
+		{104F3342-F1E4-4085-84C9-C08B97DB8000} = {B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EE3ED25-C1C9-4452-AEDD-DBC833CCE8F8}
