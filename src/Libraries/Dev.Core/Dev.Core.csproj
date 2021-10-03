@@ -7,8 +7,8 @@
 		<Authors>Devfreco Bilişim Teknolojileri İthalat İhracat Ticaret, Ltd</Authors>
 		<Version>1.0.0.0</Version>
 		<Description>The Dev.Core project contains a set of core classes for devfreco, such as caching, events, helpers, and business objects (for example, Order and Customer entities).</Description>
-		<PackageLicenseUrl>https://www.nopcommerce.com/license</PackageLicenseUrl>
-		<PackageProjectUrl>https://www.nopcommerce.com/</PackageProjectUrl>
+		<PackageLicenseUrl>https://www.devfreco.com/license</PackageLicenseUrl>
+		<PackageProjectUrl>https://www.devfreco.com/</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/mehmetunal/devfreco</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
 	</PropertyGroup>
