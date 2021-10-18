@@ -18,7 +18,7 @@ namespace Dev.Cache.Redis
             var multiplexer = ConnectionMultiplexer.Connect(redisOptions.Configuration);
             services.AddStackExchangeRedisCache(options);
             services.AddSingleton<IConnectionMultiplexer>(multiplexer);
-            services.AddSingleton<IPSMoneDistributedCache, RedisDistributedCache>();
+            services.AddSingleton<IDevDistributedCache, RedisDistributedCache>();
             services.DecorateAllInterfacesUsingAspect(assemblyPointerTypes);
             
             return services;

@@ -21,8 +21,10 @@ namespace Dev.Mongo.Extensions
                 if (client != null && client.Settings != null)
                 {
                     var setting = client.Settings.Clone();
-
-                    setting.Credential = MongoCredential.CreateCredential(databaseName, client.Settings.Credential.Username, client.Settings.Credential.Password);
+                    if (client.Settings.Credential != null)
+                    {
+                        setting.Credential = MongoCredential.CreateCredential(databaseName, client.Settings.Credential.Username, client.Settings.Credential.Password);
+                    }
                     client = new MongoClient(setting);
                 }
             }
