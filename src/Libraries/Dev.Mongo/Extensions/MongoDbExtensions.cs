@@ -6,6 +6,22 @@ namespace Dev.Mongo.Extensions
 {
     public static class MongoDbExtensions
     {
+        /// <summary>
+        /// mongodb://<username>:<password>@<server_address>:<port>/<database_name>
+        /// use mydiary
+        /// db.createUser(
+        /// {
+        ///     user: "mehmet",
+        ///     pwd: "123",
+        ///     roles:
+        ///     [
+        ///         { role: "root", db: "admin" }
+        ///     ]
+        /// })
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddMongoDbConfig(this IServiceCollection services,
             IConfiguration configuration)
         {
