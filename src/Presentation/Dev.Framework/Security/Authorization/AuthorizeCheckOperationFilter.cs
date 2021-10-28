@@ -2,6 +2,7 @@
 using System.Linq;
 using Dev.Framework.Security.Model;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -11,9 +12,9 @@ namespace Dev.Framework.Security.Authorization
     {
         private readonly ApiTokenOptions _apiTokenOptions;
 
-        public AuthorizeCheckOperationFilter(ApiTokenOptions apiTokenOptions)
+        public AuthorizeCheckOperationFilter(IOptions<ApiTokenOptions> apiTokenOptions)
         {
-            _apiTokenOptions = apiTokenOptions;
+            _apiTokenOptions = apiTokenOptions?.Value;
         }
 
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
