@@ -27,6 +27,7 @@ namespace Dev.Data.Npgsql
         public Guid CreatorUserId { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public string ModifierIP { get; set; }
-        public Guid? ModifierUserId { get; set; }
+        public Guid? ModifierUserId { get; set; } 
+        public int DisplayOrder { get; set; }
     }
 }

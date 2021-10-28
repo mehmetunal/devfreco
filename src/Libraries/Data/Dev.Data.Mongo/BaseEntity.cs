@@ -36,6 +36,8 @@ namespace Dev.Data.Mongo
         [DataMember]
         public string CreatedUserID { get; set; }
         [DataMember]
-        public string UpdatedUserID { get; set; }
+        public string UpdatedUserID { get; set; }      
+        [DataMember]
+        public int DisplayOrder { get; set; }
     }
 }
