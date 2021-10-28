@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Npgsql/Localization/Language.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Npgsql/Localization/LocaleStringResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Npgsql/Localization/LocalizedProperty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/CrosExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Security/Authorization/AuthorizeCheckOperationFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Npgsql/Dev.Npgsql.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Npgsql/Dev.Npgsql.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Security/Model/ApiTokenOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Security/Model/ApiTokenOptions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Systems/BaseStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Systems/BaseStartup.cs" afterDir="false" />
+    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="bugfix">
+      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/AzureExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Helper/Configuration/ShellHelpers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Helper/Docker/DockerHelpers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Model/AzureKeyVaultConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Model/DockerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Dev.Framework.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Dev.Framework.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67edcddca9c74999a8b5a2cb7f6180f267778/18/TokenOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://M:/Devfreco/Projeler/devfreco/src/Presentation/Dev.Framework/Security/Authorization/AuthorizeCheckOperationFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9cc48abbdbae46be9b3c826b9a65d44b21f78/07/7ebed2e7/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zxfzDNHwlUGuKgQ5hdMUtwW1pz" />
@@ -74,8 +67,38 @@
       <workItem from="1635149262889" duration="222000" />
       <workItem from="1635149757478" duration="1314000" />
       <workItem from="1635175563532" duration="22000" />
-      <workItem from="1635410433175" duration="1880000" />
+      <workItem from="1635410433175" duration="2621000" />
+      <workItem from="1635413522602" duration="3786000" />
     </task>
+    <task id="LOCAL-00001" summary="yenilikler eklendi">
+      <created>1635412361640</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635412361640</updated>
+    </task>
+    <task id="LOCAL-00002" summary="bugfix">
+      <created>1635412372028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635412372028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="bugfix">
+      <created>1635412985768</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635412985768</updated>
+    </task>
+    <task id="LOCAL-00004" summary="bugfix">
+      <created>1635420249879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635420249879</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +121,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="yenilikler eklendi" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
 </project>
