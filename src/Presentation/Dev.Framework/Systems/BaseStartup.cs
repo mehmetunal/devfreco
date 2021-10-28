@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
+using Dev.Framework.Security.Model;
 
 namespace Dev.Framework.Systems
 {
@@ -18,6 +19,7 @@ namespace Dev.Framework.Systems
     {
         protected string SwaggerTitle = "My API";
         protected string SwaggerVersion = "v1";
+        protected ApiTokenOptions TokenOptions;
 
         public BaseStartup(IConfiguration configuration)
         {
@@ -30,15 +32,21 @@ namespace Dev.Framework.Systems
 
         public virtual void ConfigureServices(IServiceCollection services)
         {
+            var tokenOptionsConfiguration = Configuration.GetSection("TokenOptions");
+
+            services.Configure<ApiTokenOptions>(tokenOptionsConfiguration);
+
+            TokenOptions = tokenOptionsConfiguration.Get<ApiTokenOptions>();
+
             services.AddControllers().AddJsonOptionsConfig();
 
-            services.AddCors();
+            services.AddAdminApiCors(TokenOptions);
 
             services.AddApiVersioningConfig(Configuration);
 
             services.AddHttpContextAccessor();
 
-            services.AddSwaggerGenConfig(SwaggerTitle, SwaggerVersion);
+            services.AddSwaggerGenConfig(TokenOptions);
 
             services.RegisterAll<IService>();
 
@@ -70,7 +78,7 @@ namespace Dev.Framework.Systems
 
             app.UseStaticFiles();
 
-            app.UseSwaggerUIConfig(SwaggerTitle);
+            app.UseSwaggerUIConfig(TokenOptions);
 
             app.UseRouting();
 

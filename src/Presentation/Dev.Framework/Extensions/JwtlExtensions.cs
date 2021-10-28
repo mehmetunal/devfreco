@@ -23,13 +23,18 @@ namespace Dev.Framework.Extensions
             var tokenOptions = tokenOptionsConfiguration.Get<ApiTokenOptions>();
 
             services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+                {
+                    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
                 .AddJwtBearer(x =>
                 {
-                    x.RequireHttpsMetadata = false;
+                    x.Authority = tokenOptions.IdentityServerBaseUrl;
+                    x.RequireHttpsMetadata = tokenOptions.RequireHttpsMetadata;
+                    x.Audience = tokenOptions.OidcApiName;
                     x.SaveToken = true;
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
