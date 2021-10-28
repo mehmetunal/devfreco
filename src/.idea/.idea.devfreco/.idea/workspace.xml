@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Model/Pagination/IPagedList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Model/Pagination/PagedList.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Mongo/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Mongo/BaseEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67edcddca9c74999a8b5a2cb7f6180f267778/18/TokenOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/925036415ea242508007a6a499c014ac9578/8/JwtBearerOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9cc48abbdbae46be9b3c826b9a65d44b21f78/07/7ebed2e7/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zxfzDNHwlUGuKgQ5hdMUtwW1pz" />
@@ -65,7 +65,12 @@
       <workItem from="1635175563532" duration="22000" />
       <workItem from="1635410433175" duration="2621000" />
       <workItem from="1635413522602" duration="4290000" />
-      <workItem from="1635425633143" duration="611000" />
+      <workItem from="1635425633143" duration="2858000" />
+      <workItem from="1635432610101" duration="161000" />
+      <workItem from="1635433908127" duration="108000" />
+      <workItem from="1635437414691" duration="805000" />
+      <workItem from="1635441614158" duration="810000" />
+      <workItem from="1635447925439" duration="134000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -102,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635423233483</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bugfix">
+      <created>1635426379107</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635426379107</updated>
+    </task>
+    <task id="LOCAL-00007" summary="bugfix">
+      <created>1635426531924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635426531924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,5 +147,219 @@
     <MESSAGE value="yenilikler eklendi" />
     <MESSAGE value="bugfix" />
     <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>17</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="17" containingFunctionPresentation="method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="569" />
+            </startOffsets>
+            <endOffsets>
+              <option value="570" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>38</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="38" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="1643" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2712" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>55</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="55" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="2733" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4164" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>58</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="58" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="2874" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2875" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>66</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="66" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="3338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3339" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
+          <line>72</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="72" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
+            <startOffsets>
+              <option value="3655" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3656" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>25</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="25" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="718" />
+            </startOffsets>
+            <endOffsets>
+              <option value="719" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>44</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="44" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="1516" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1517" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>48</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="48" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="1680" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1681" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>52</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="52" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="1849" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1850" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>56</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="56" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2016" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2017" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>60</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="60" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2178" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2179" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>64</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="64" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2327" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2328" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>68</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="68" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2491" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2492" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>72</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="72" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2655" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2656" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
+          <line>76</line>
+          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Middleware\ResponseRewindMiddleware.cs" initialLine="76" containingFunctionPresentation="method 'Invoke'">
+            <startOffsets>
+              <option value="2788" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2789" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

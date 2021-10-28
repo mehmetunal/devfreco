@@ -47,7 +47,7 @@ namespace Dev.Framework.Extensions
                         //Gelen her tokenun doğrulankasını sağlıyor.Token 3.kısım(imza) kontrolü
                         ValidateIssuerSigningKey = true,
                         //Doğrulama Keyini Tanımladığımız yer.Neyle kontrol etmesi gerektigi
-                        IssuerSigningKey = SingHandler.GetSecurityKey(tokenOptions.SecurityKey),
+                        //IssuerSigningKey = SingHandler.GetSecurityKey(tokenOptions.SecurityKey),
 
                         ClockSkew = TimeSpan.Zero,
                         //Süresi dolmamış token vermesini sağlıyor

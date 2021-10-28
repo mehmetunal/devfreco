@@ -25,6 +25,7 @@ namespace Dev.Data.Mongo
             set => _id = value;
         }
 
+        
         [DataMember]
         public bool IsPublish { get; set; }
         [DataMember]
@@ -32,11 +33,15 @@ namespace Dev.Data.Mongo
         [DataMember]
         public DateTime CreatedDate { get; set; }
         [DataMember]
-        public DateTime? UpdatedDate { get; set; }
+        public string CreatorIP { get; set; }
         [DataMember]
-        public string CreatedUserID { get; set; }
+        public string CreatorUserId { get; set; }
         [DataMember]
-        public string UpdatedUserID { get; set; }      
+        public DateTime? ModifiedDate { get; set; }
+        [DataMember]
+        public string ModifierIP { get; set; }
+        [DataMember]
+        public string ModifierUserId { get; set; }
         [DataMember]
         public int DisplayOrder { get; set; }
     }
