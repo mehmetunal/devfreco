@@ -20,6 +20,8 @@ namespace Dev.Data.Npgsql
         }
         public TKey Id { get; set; }
         public Guid ObjectId { get; set; }
+        public bool IsPublish { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime CreatedDate { get; set; }
         public string CreatorIP { get; set; }
         public Guid CreatorUserId { get; set; }

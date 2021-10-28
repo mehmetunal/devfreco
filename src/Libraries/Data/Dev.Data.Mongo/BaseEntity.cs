@@ -26,7 +26,7 @@ namespace Dev.Data.Mongo
         }
 
         [DataMember]
-        public bool IsActive { get; set; }
+        public bool IsPublish { get; set; }
         [DataMember]
         public bool IsDeleted { get; set; }
         [DataMember]
