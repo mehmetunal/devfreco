@@ -39,7 +39,9 @@ namespace Dev.Framework.Extensions
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
                         //Gelen isteğin doğru siteden olduğunu kontrol eder,
-                        ValidateAudience = false,
+                        ValidateAudience = true,
+                        // Validet eilecek Issure
+                        ValidIssuer = tokenOptions.IdentityServerBaseUrl,
                         //Gelen isteğin doğru siteden olduğunu kontrol eder, //Bu iki ayar ise "aud" ve "iss" claimlerini kontrol edelim mi diye soruyor
                         ValidateIssuer = false,
                         //Gelen her tokenun doğrulankasını sağlıyor.Token 3.kısım(imza) kontrolü
