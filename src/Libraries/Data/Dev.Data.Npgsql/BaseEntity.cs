@@ -15,8 +15,6 @@ namespace Dev.Data.Npgsql
         {
             ObjectId = Guid.NewGuid();
             CreatedDate = DateTime.UtcNow;
-            CreatorIP = "";
-            CreatorUserId = Guid.NewGuid();
         }
         public TKey Id { get; set; }
         public Guid ObjectId { get; set; }

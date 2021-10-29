@@ -12,6 +12,7 @@ namespace Dev.Data.Mongo
         protected BaseEntity()
         {
             _id = ObjectId.GenerateNewId();
+            CreatedDate = DateTime.UtcNow;
         }
 
         [BsonId]
