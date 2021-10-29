@@ -1,4 +1,7 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using System.Linq;
+using Dev.Data.Mongo.Attributes;
+using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -48,6 +51,12 @@ namespace Dev.Mongo.Extensions
             services.AddScoped(typeof(IMongoDatabase), c => client.GetDatabase(databaseName));
 
             return services;
+        }
+        
+        public static string GetCollectionName(this Type type)
+        {
+            return (type.GetCustomAttributes(typeof(BsonCollectionAttribute), true).FirstOrDefault()
+                as BsonCollectionAttribute).CollectionName;
         }
     }
 }

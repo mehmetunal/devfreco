@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using Dev.Data.Mongo;
+using Dev.Mongo.Extensions;
 
 namespace Dev.Mongo.Repository
 {
@@ -28,7 +29,7 @@ namespace Dev.Mongo.Repository
         public MongoRepository(IMongoDatabase database)
         {
             Database = database;
-            Collection = Database.GetCollection<T>(typeof(T).Name);
+            Collection = Database.GetCollection<T>(typeof(T).GetCollectionName());
         }
         #endregion
 
