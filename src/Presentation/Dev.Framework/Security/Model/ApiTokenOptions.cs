@@ -1,4 +1,6 @@
-﻿namespace Dev.Framework.Security.Model
+﻿using System.ComponentModel;
+
+namespace Dev.Framework.Security.Model
 {
     public class ApiTokenOptions
     {
@@ -13,6 +15,8 @@
         public bool CorsAllowAnyOrigin { get; set; }
         public string[] CorsAllowOrigins { get; set; }
         public int AccessTokenExpiration { get; set; }
+
+        [DefaultValue("Qqert___---&/^+%^+/&)((/=)IDFXGAS'34slşfkdsf.asdasdfdgdf.g..hg.jy.uı.yuı.yu..dxc.v.xzc.sarf.erwt..hgf.f.gh.fgh.fgg.1.23.123..435.46.45.!!!!&+%&'^+&//()YGFDBSDF%++^%'^!'^(/))/(=GDZXC'")]
         public string SecurityKey { get; set; }
     }
 }
