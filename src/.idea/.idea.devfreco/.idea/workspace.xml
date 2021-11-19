@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Libraries/Data/Dev.Data.Mongo/Attributes/BsonCollectionAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Extensions/MongoDbExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Extensions/MongoDbExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +46,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,7 +72,17 @@
       <workItem from="1635447925439" duration="134000" />
       <workItem from="1635455862886" duration="43000" />
       <workItem from="1635491597235" duration="324000" />
-      <workItem from="1635495724880" duration="347000" />
+      <workItem from="1635495724880" duration="702000" />
+      <workItem from="1635674621916" duration="180000" />
+      <workItem from="1635791497093" duration="557000" />
+      <workItem from="1636148241993" duration="1351000" />
+      <workItem from="1636911110282" duration="1003000" />
+      <workItem from="1636914806328" duration="417000" />
+      <workItem from="1636918939837" duration="1234000" />
+      <workItem from="1637348373017" duration="27000" />
+      <workItem from="1637348586154" duration="36000" />
+      <workItem from="1637349184000" duration="6000" />
+      <workItem from="1637349523199" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -139,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635491863786</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="bugfix">
+      <created>1635496367405</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635496367405</updated>
+    </task>
+    <task id="LOCAL-00011" summary="bugfix">
+      <created>1635674779869</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635674779869</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,58 +216,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
-          <line>55</line>
-          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="55" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
-            <startOffsets>
-              <option value="2733" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4164" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
-          <line>58</line>
-          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="58" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
-            <startOffsets>
-              <option value="2874" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2875" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
-          <line>66</line>
-          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="66" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
-            <startOffsets>
-              <option value="3338" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3339" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/JwtlExtensions.cs</url>
-          <line>72</line>
-          <properties documentPath="M:\Devfreco\Projeler\devfreco\src\Presentation\Dev.Framework\Extensions\JwtlExtensions.cs" initialLine="72" containingFunctionPresentation="lambda expression inside method 'AddJwtConfig'">
-            <startOffsets>
-              <option value="3655" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3656" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Presentation/Dev.Framework/Middleware/ResponseRewindMiddleware.cs</url>
