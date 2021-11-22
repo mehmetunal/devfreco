@@ -19,28 +19,33 @@ namespace Dev.Framework.Extensions
         public static IServiceCollection AddSwaggerGenConfig(this IServiceCollection services, ApiTokenOptions apiTokenOptions)
         {
             // services.AddSwaggerGen(c => { c.SwaggerDoc(Version, new OpenApiInfo { Title = Title, Version = Version }); });
+
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(apiTokenOptions.ApiVersion, new OpenApiInfo {Title = apiTokenOptions.ApiName, Version = apiTokenOptions.ApiVersion});
-
-                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                if (!string.IsNullOrEmpty(apiTokenOptions.IdentityServerBaseUrl))
                 {
-                    Type = SecuritySchemeType.OAuth2,
-                    Flows = new OpenApiOAuthFlows
+                    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                     {
-                        AuthorizationCode = new OpenApiOAuthFlow
+                        Type = SecuritySchemeType.OAuth2,
+                        Flows = new OpenApiOAuthFlows
                         {
-                            AuthorizationUrl = new Uri($"{apiTokenOptions.IdentityServerBaseUrl}/connect/authorize"),
-                            TokenUrl = new Uri($"{apiTokenOptions.IdentityServerBaseUrl}/connect/token"),
-                            Scopes = new Dictionary<string, string>
+                            AuthorizationCode = new OpenApiOAuthFlow
                             {
-                                {apiTokenOptions.OidcApiName, apiTokenOptions.ApiName}
+                                AuthorizationUrl = new Uri($"{apiTokenOptions.IdentityServerBaseUrl}/connect/authorize"),
+                                TokenUrl = new Uri($"{apiTokenOptions.IdentityServerBaseUrl}/connect/token"),
+                                Scopes = new Dictionary<string, string>
+                                {
+                                    {apiTokenOptions.OidcApiName, apiTokenOptions.ApiName}
+                                }
                             }
                         }
-                    }
-                });
-                options.OperationFilter<AuthorizeCheckOperationFilter>();
+                    });
+                    options.OperationFilter<AuthorizeCheckOperationFilter>();
+                }
             });
+
 
             return services;
         }
@@ -51,7 +56,10 @@ namespace Dev.Framework.Extensions
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint($"{apiTokenOptions.ApiBaseUrl}/swagger/v1/swagger.json", apiTokenOptions.ApiName);
-                c.OAuthClientId(apiTokenOptions.OidcSwaggerUIClientId);
+                if (!string.IsNullOrEmpty(apiTokenOptions.OidcSwaggerUIClientId))
+                {
+                    c.OAuthClientId(apiTokenOptions.OidcSwaggerUIClientId);
+                }
                 c.OAuthAppName(apiTokenOptions.ApiName);
                 c.OAuthUsePkce();
                 c.RoutePrefix = string.Empty;

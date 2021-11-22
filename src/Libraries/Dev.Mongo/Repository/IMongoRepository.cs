@@ -4,6 +4,7 @@ using Dev.Core.Entities;
 using Dev.Core.Repository;
 using MongoDB.Driver.Linq;
 using System.Collections.Generic;
+using MongoDB.Driver.GridFS;
 
 namespace Dev.Mongo.Repository
 {

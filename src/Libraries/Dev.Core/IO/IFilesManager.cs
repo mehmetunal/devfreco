@@ -60,5 +60,12 @@ namespace Dev.Core.IO
         /// <param name="newPath"></param>
         /// <param name="filePath"></param>
         void MergeChunks(string newPath, string filePath);
+
+        /// <summary>
+        /// convert IFormFile to bytes
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        byte[] GetByteImage(IFormFile file);
     }
 }

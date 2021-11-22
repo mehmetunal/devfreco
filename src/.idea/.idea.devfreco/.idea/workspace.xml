@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Core/IO/FilesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Core/IO/FilesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Core/IO/IFilesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Core/IO/IFilesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IMongoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IMongoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/MongoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/MongoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +33,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67edcddca9c74999a8b5a2cb7f6180f267778/18/TokenOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ebba8924d4040c3ba71e44636714cce66578/26/Select.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dc52899f33814b42aeecb444027006d37d78/D/IFormFile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28be434f13d647688f5ff1b9d2bc98278f5778/38B/Stream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/925036415ea242508007a6a499c014ac9578/8/JwtBearerOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28be434f13d647688f5ff1b9d2bc98278f5778/38C/BinaryReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9cc48abbdbae46be9b3c826b9a65d44b21f78/07/7ebed2e7/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb797389c19f4ddd874a5cda11840aae18000/ea/55e566b3/IGridFSBucket`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ccdd431a754a49928c12626c525fc4dc1bbb88/26/ApiBehaviorOptions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zxfzDNHwlUGuKgQ5hdMUtwW1pz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,6 +97,15 @@
       <workItem from="1637348586154" duration="36000" />
       <workItem from="1637349184000" duration="6000" />
       <workItem from="1637349523199" duration="490000" />
+      <workItem from="1637352897728" duration="165000" />
+      <workItem from="1637401391610" duration="260000" />
+      <workItem from="1637401753981" duration="37000" />
+      <workItem from="1637406442671" duration="743000" />
+      <workItem from="1637418367864" duration="224000" />
+      <workItem from="1637419130360" duration="711000" />
+      <workItem from="1637436750116" duration="17000" />
+      <workItem from="1637599501412" duration="6778000" />
+      <workItem from="1637616526808" duration="2198000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -161,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635674779869</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="bugfix">
+      <created>1637352997569</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637352997569</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

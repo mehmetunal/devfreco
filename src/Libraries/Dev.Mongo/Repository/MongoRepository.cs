@@ -8,12 +8,15 @@ using System.Linq.Expressions;
 using System.Collections.Generic;
 using Dev.Data.Mongo;
 using Dev.Mongo.Extensions;
+using MongoDB.Driver.GridFS;
 
 namespace Dev.Mongo.Repository
 {
     public sealed class MongoRepository<T> : IMongoRepository<T> where T : BaseEntity, IEntity
     {
         #region Fields
+
+
         /// <summary>
         /// Gets the collection
         /// </summary>

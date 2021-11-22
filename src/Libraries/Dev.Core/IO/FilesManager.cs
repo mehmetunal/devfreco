@@ -190,7 +190,7 @@ namespace Dev.Core.IO
             var model = new FileResponseModel();
             model.FileInfo = new FileInfo(file.FileName);
 
-            var fi = new FileInfo(path) { Attributes = FileAttributes.Normal };
+            var fi = new FileInfo(path) {Attributes = FileAttributes.Normal};
 
             System.IO.File.Delete(path);
 
@@ -225,8 +225,8 @@ namespace Dev.Core.IO
                 fs1 = File.Open(newPath, FileMode.Append);
                 fs2 = File.Open(filePath, FileMode.Open);
                 byte[] fs2Content = new byte[fs2.Length];
-                fs2.Read(fs2Content, 0, (int)fs2.Length);
-                fs1.Write(fs2Content, 0, (int)fs2.Length);
+                fs2.Read(fs2Content, 0, (int) fs2.Length);
+                fs1.Write(fs2Content, 0, (int) fs2.Length);
             }
             catch (Exception ex)
             {
@@ -237,6 +237,20 @@ namespace Dev.Core.IO
                 if (fs1 != null) fs1.Close();
                 if (fs2 != null) fs2.Close();
                 Delete(filePath);
+            }
+        }
+
+        /// <summary>
+        /// convert IFormFile to bytes
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        public byte[] GetByteImage(IFormFile file)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                file.OpenReadStream().CopyTo(memoryStream);
+                return memoryStream.ToArray();
             }
         }
 
