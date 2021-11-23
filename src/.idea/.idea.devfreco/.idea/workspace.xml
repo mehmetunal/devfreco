@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Core/IO/FilesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Core/IO/FilesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Core/IO/IFilesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Core/IO/IFilesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Dev.Mongo.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IMongoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IMongoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/MongoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/MongoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/SwaggerGenExtensions.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +95,7 @@
       <workItem from="1637419130360" duration="711000" />
       <workItem from="1637436750116" duration="17000" />
       <workItem from="1637599501412" duration="6778000" />
-      <workItem from="1637616526808" duration="2198000" />
+      <workItem from="1637616526808" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -191,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637352997569</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mongodb video repository GridFs eklendi.">
+      <created>1637618775060</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637618775060</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +213,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="yenilikler eklendi" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="mongodb video repository GridFs eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="mongodb video repository GridFs eklendi." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
