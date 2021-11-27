@@ -8,14 +8,13 @@ using System.Linq.Expressions;
 using System.Collections.Generic;
 using Dev.Data.Mongo;
 using Dev.Mongo.Extensions;
-using MongoDB.Driver.GridFS;
+using MongoDB.Bson;
 
 namespace Dev.Mongo.Repository
 {
     public sealed class MongoRepository<T> : IMongoRepository<T> where T : BaseEntity, IEntity
     {
         #region Fields
-
 
         /// <summary>
         /// Gets the collection
@@ -26,17 +25,21 @@ namespace Dev.Mongo.Repository
         /// Mongo Database
         /// </summary>
         public IMongoDatabase Database { get; }
+
         #endregion
 
         #region Ctor
+
         public MongoRepository(IMongoDatabase database)
         {
             Database = database;
             Collection = Database.GetCollection<T>(typeof(T).GetCollectionName());
         }
+
         #endregion
 
         #region Methos
+
         public IQueryable<T> Get()
             => Collection.AsQueryable();
 
@@ -78,10 +81,10 @@ namespace Dev.Mongo.Repository
             => await Collection.Find(where).SingleOrDefaultAsync();
 
         public T SingleById(object id)
-            => Collection.Find(p => p.Id.Equals(id)).Single();
+            => Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).Single();
 
         public async Task<T> SingleByIdAsync(object id)
-            => await Collection.Find(p => p.Id.Equals(id)).SingleAsync();
+            => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).SingleAsync();
 
         public T Find(Expression<Func<T, bool>> @where)
             => Collection.Find(where).FirstOrDefault();
@@ -90,10 +93,10 @@ namespace Dev.Mongo.Repository
             => await Collection.Find(where).FirstOrDefaultAsync();
 
         public T FindById(object id)
-            => Collection.Find(p => p.Id.Equals(id)).FirstOrDefault();
+            => Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).FirstOrDefault();
 
         public async Task<T> FindByIdAsync(object id)
-            => await Collection.Find(p => p.Id.Equals(id)).FirstOrDefaultAsync();
+            => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).FirstOrDefaultAsync();
 
         public T Add(T entity)
         {
@@ -119,13 +122,13 @@ namespace Dev.Mongo.Repository
 
         public T Update(T entity)
         {
-            Collection.ReplaceOne(r => r.Id == entity.Id, entity, new ReplaceOptions() { IsUpsert = false });
+            Collection.ReplaceOne(r => r.Id == entity.Id, entity, new ReplaceOptions() {IsUpsert = false});
             return entity;
         }
 
         public async Task<T> UpdateAsync(T entity)
         {
-            await Collection.ReplaceOneAsync(r => r.Id == entity.Id, entity, new ReplaceOptions() { IsUpsert = false });
+            await Collection.ReplaceOneAsync(r => r.Id == entity.Id, entity, new ReplaceOptions() {IsUpsert = false});
             return entity;
         }
 
@@ -186,17 +189,20 @@ namespace Dev.Mongo.Repository
         }
 
         public T Delete(object id)
-            => Collection.FindOneAndDelete(d => d.Id.Equals(id));
+            => Collection.FindOneAndDelete(d => d.Id == ObjectId.Parse(id.ToString()));
 
         public async Task<T> DeleteAsync(object id)
-            => await Collection.FindOneAndDeleteAsync(d => d.Id.Equals(id));
+            => await Collection.FindOneAndDeleteAsync(d => d.Id == ObjectId.Parse(id.ToString()));
+
         #endregion
 
         #region Properties
+
         public IMongoQueryable<T> Table => Collection.AsQueryable();
 
         public IList<T> FindByFilterDefinition(FilterDefinition<T> query)
             => Collection.Find(query).ToList();
+
         #endregion
     }
 }
