@@ -13,7 +13,7 @@ using MongoDB.Driver.Linq;
 
 namespace Dev.Mongo.Repository
 {
-    public sealed class GridFsRepository<T> : IGridFsRepository<T> where T : BaseEntity, IEntity
+    public sealed class GridFsRepository : IGridFsRepository 
     {
         #region Collection
 
@@ -25,7 +25,6 @@ namespace Dev.Mongo.Repository
         /// <summary>
         /// Gets the collection
         /// </summary>
-        public IMongoCollection<T> Collection { get; }
 
         /// <summary>
         ///Gets the Mongo Database
@@ -39,7 +38,6 @@ namespace Dev.Mongo.Repository
         public GridFsRepository(IMongoDatabase database)
         {
             Database = database;
-            Collection = Database.GetCollection<T>(typeof(T).GetCollectionName());
             GridFsBucket = new GridFSBucket(Database);
         }
 
@@ -68,6 +66,11 @@ namespace Dev.Mongo.Repository
             return stream;
         }
 
+        public async Task<IAsyncCursor<GridFSFileInfo>> GetFileById(ObjectId id)
+        {
+            var filter = Builders<GridFSFileInfo>.Filter.Eq("_id", id);
+            return await GridFsBucket.FindAsync(filter);
+        }
         public IEnumerable<GridFSFileInfo> GetAllFilesByContentType(string contentType, int skip, int take)
         {
             var filter = Builders<GridFSFileInfo>.Filter.Eq(info => info.Metadata, new BsonDocument(new BsonElement("contentType", contentType)));
@@ -140,7 +143,7 @@ namespace Dev.Mongo.Repository
             return bytes;
         }
 
-        public async Task<string> UploadFile(byte[] source, string filename)
+        public async Task<string> UploadFileAsync(byte[] source, string filename)
         {
             var options = new GridFSUploadOptions
             {
@@ -152,7 +155,7 @@ namespace Dev.Mongo.Repository
             return id.ToString();
         }
 
-        public async Task UploadFile(Stream source, string filename)
+        public async Task<string> UploadFileAsync(Stream source, string filename)
         {
             var options = new GridFSUploadOptions
             {
@@ -165,6 +168,8 @@ namespace Dev.Mongo.Repository
                 var streamId = stream.Id; // the unique Id of the file being uploaded
                 source.CopyTo(stream); // write the contents of the file to stream using synchronous Stream methods
                 stream.Close(); // optional because Dispose calls Close
+
+                return streamId.ToString();
             }
         }
 
@@ -234,8 +239,6 @@ namespace Dev.Mongo.Repository
         #endregion
 
         #region Properties
-
-        public IMongoQueryable<T> Table => Collection.AsQueryable();
 
         #endregion
     }

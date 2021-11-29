@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="" />
+    <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/67edcddca9c74999a8b5a2cb7f6180f267778/18/TokenOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ebba8924d4040c3ba71e44636714cce66578/26/Select.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dc52899f33814b42aeecb444027006d37d78/D/IFormFile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb797389c19f4ddd874a5cda11840aae18000/fe/d5d96ff7/IGridFSBucket.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28be434f13d647688f5ff1b9d2bc98278f5778/38B/Stream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/925036415ea242508007a6a499c014ac9578/8/JwtBearerOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28be434f13d647688f5ff1b9d2bc98278f5778/38C/BinaryReader.cs" root0="SKIP_HIGHLIGHTING" />
@@ -96,6 +101,13 @@
       <workItem from="1637436750116" duration="17000" />
       <workItem from="1637599501412" duration="6778000" />
       <workItem from="1637616526808" duration="2246000" />
+      <workItem from="1637700285585" duration="17000" />
+      <workItem from="1637938565483" duration="11000" />
+      <workItem from="1638017839801" duration="1913000" />
+      <workItem from="1638035087736" duration="211000" />
+      <workItem from="1638035469554" duration="3338000" />
+      <workItem from="1638039721602" duration="5540000" />
+      <workItem from="1638081115373" duration="3017000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -188,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637618775060</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="bugfix">
+      <created>1638035274424</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638035274424</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,9 +231,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="yenilikler eklendi" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="mongodb video repository GridFs eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="mongodb video repository GridFs eklendi." />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -12,22 +12,16 @@ using MongoDB.Driver.Linq;
 
 namespace Dev.Mongo.Repository
 {
-    public interface IGridFsRepository<T> where T : BaseEntity, IEntity
+    public interface IGridFsRepository
     {
         #region Collection
 
         public IGridFSBucket GridFsBucket { get; }
-        IMongoCollection<T> Collection { get; }
         IMongoDatabase Database { get; }
 
         #endregion
 
         #region CustomProperty
-
-        /// <summary>
-        /// Gets a table
-        /// </summary>
-        IMongoQueryable<T> Table { get; }
 
         #endregion
 
@@ -37,7 +31,7 @@ namespace Dev.Mongo.Repository
         List<GridFSFileInfo<ObjectId>> GetAllFiles();
         List<GridFSFileInfo<ObjectId>> GetAllFiles(int skip, int take);
         IEnumerable<GridFSFileInfo> GetAllFilesByContentType(string contentType, int skip, int take);
-
+        Task<IAsyncCursor<GridFSFileInfo>> GetFileById(ObjectId id);
         #endregion
 
         #region ANY
@@ -61,8 +55,8 @@ namespace Dev.Mongo.Repository
 
         #region UPLOAD
 
-        Task<string> UploadFile(byte[] source, string filename);
-        Task UploadFile(Stream source, string filename);
+        Task<string> UploadFileAsync(byte[] source, string filename);
+        Task<string>  UploadFileAsync(Stream source, string filename);
         Task<string> UploadAsync(IFormFile file);
         Task RenameAsync(string oldFilename, string newFilename);
         Task RenameAsync(ObjectId id, string newFilename);
