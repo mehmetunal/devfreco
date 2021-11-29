@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/GridFsRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Libraries/Dev.Mongo/Repository/IGridFsRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +105,7 @@
       <workItem from="1638035087736" duration="211000" />
       <workItem from="1638035469554" duration="3338000" />
       <workItem from="1638039721602" duration="5540000" />
-      <workItem from="1638081115373" duration="3017000" />
+      <workItem from="1638081115373" duration="3677000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638035274424</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="bugfix">
+      <created>1638202028455</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638202028455</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

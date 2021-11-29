@@ -7,7 +7,7 @@ namespace Dev.Cache.Redis
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection AddPSMoneDistributedRedisCache(
+        public static IServiceCollection AddDevDistributedRedisCache(
             this IServiceCollection services, 
             Action<RedisCacheOptions> options, 
             params Type[] assemblyPointerTypes)
