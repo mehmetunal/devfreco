@@ -12,12 +12,14 @@ namespace Dev.Core.IO
         /// </summary>
         /// <param name="path"></param>
         void Delete(string path);
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
         DirectoryInfo FolderCreat(string path);
+
         /// <summary>
         /// 
         /// </summary>
@@ -25,6 +27,7 @@ namespace Dev.Core.IO
         /// <param name="newFolderName"></param>
         /// <returns></returns>
         string FolderEditName(string path, string newFolderName);
+
         /// <summary>
         /// 
         /// </summary>
@@ -33,6 +36,7 @@ namespace Dev.Core.IO
         /// <param name="fileName"></param>
         /// <returns></returns>
         FileResponseModel FilesCreat(string createdPath, IFormFile file, string fileName);
+
         /// <summary>
         /// 
         /// </summary>
@@ -41,12 +45,22 @@ namespace Dev.Core.IO
         /// <param name="newFileName"></param>
         /// <returns></returns>
         FileResponseModel FilesEditName(string path, IFormFile file, string newFileName);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="newFileName"></param>
+        /// <returns></returns>
+        FileInfo FileRename(string path, string newFileName);
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="directoryInfo"></param>
         /// <returns></returns>
         string GetFolderType(DirectoryInfo directoryInfo);
+
         /// <summary>
         /// 
         /// </summary>

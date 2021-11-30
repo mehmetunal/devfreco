@@ -62,6 +62,20 @@ namespace Dev.Core.IO
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="path"></param>
+        /// <param name="newFileName"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public FileInfo FileRename(string path, string newFileName)
+        {
+            FileInfo fileInfo = new FileInfo(path) {Attributes = FileAttributes.Normal};
+            fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, newFileName));
+            return fileInfo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="directoryInfo"></param>
         /// <returns></returns>
         public string GetFolderType(DirectoryInfo directoryInfo)
