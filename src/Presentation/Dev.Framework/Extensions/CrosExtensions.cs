@@ -1,5 +1,6 @@
 ﻿using Dev.Framework.Security.Model;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 
 namespace Dev.Framework.Extensions
 {
@@ -21,8 +22,12 @@ namespace Dev.Framework.Extensions
                             builder.WithOrigins(apiTokenOptions.CorsAllowOrigins);
                         }
 
-                        builder.AllowAnyHeader();
-                        builder.AllowAnyMethod();
+                        builder
+                            .SetIsOriginAllowed((host) => true)
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .WithHeaders(HeaderNames.AccessControlAllowHeaders, "Content-Type")
+                            ;
                     });
             });
 

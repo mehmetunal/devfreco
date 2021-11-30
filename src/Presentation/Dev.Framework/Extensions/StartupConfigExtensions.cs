@@ -32,7 +32,11 @@ namespace Dev.Framework.Extensions
         /// <returns></returns>
         public static IApplicationBuilder UseCorsConfig(this IApplicationBuilder app)
         {
-            return app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            return app.UseCors(builder => builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed((host) => true)
+                .AllowCredentials());
         }
     }
 }

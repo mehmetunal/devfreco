@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed9822b1-8a4a-4df0-91cb-f49831689d5e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.devfreco/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/CrosExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/CrosExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/StartupConfigExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Dev.Framework/Extensions/StartupConfigExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ccdd431a754a49928c12626c525fc4dc1bbb88/26/ApiBehaviorOptions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zxfzDNHwlUGuKgQ5hdMUtwW1pz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -44,6 +48,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -106,6 +111,9 @@
       <workItem from="1638035469554" duration="3338000" />
       <workItem from="1638039721602" duration="5540000" />
       <workItem from="1638081115373" duration="3677000" />
+      <workItem from="1638209501778" duration="904000" />
+      <workItem from="1638210532090" duration="148000" />
+      <workItem from="1638287029230" duration="768000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>
@@ -212,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638202028455</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="bugfix">
+      <created>1638209707412</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638209707412</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +249,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="yenilikler eklendi" />
     <MESSAGE value="mongodb video repository GridFs eklendi." />
