@@ -1,10 +1,11 @@
-﻿using MongoDB.Bson;
+﻿using Dev.Data.Mongo.Attributes;
+using MongoDB.Bson;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dev.Data.Mongo.Common
 {
-    [Table("dev_GenericAttribute")]
+    [BsonCollection("dev_GenericAttribute")]
     public partial class GenericAttribute : BaseEntity, IPrimaryKey<ObjectId>
     {
         /// <summary>

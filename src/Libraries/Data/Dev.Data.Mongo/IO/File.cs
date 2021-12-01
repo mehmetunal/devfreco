@@ -1,9 +1,10 @@
-﻿using MongoDB.Bson;
+﻿using Dev.Data.Mongo.Attributes;
+using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dev.Data.Mongo.IO
 {
-    [Table("dev_File")]
+    [BsonCollection("dev_File")]
     public partial class File : BaseEntity, IPrimaryKey<ObjectId>
     {
         public string FileName { get; set; }

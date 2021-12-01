@@ -1,10 +1,11 @@
-﻿using MongoDB.Bson;
+﻿using Dev.Data.Mongo.Attributes;
+using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dev.Data.Mongo.Localization
 {
-    [Table("dev_LocaleStringResource")]
+    [BsonCollection("dev_LocaleStringResource")]
     public partial class LocaleStringResource : BaseEntity, IPrimaryKey<ObjectId>
     {
         [Required]

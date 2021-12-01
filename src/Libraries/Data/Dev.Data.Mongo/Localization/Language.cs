@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Dev.Data.Mongo.Attributes;
+using MongoDB.Bson;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dev.Data.Mongo.Localization
 {
-    [Table("dev_Language")]
+    [BsonCollection("dev_Language")]
     public partial class Language : BaseEntity, IPrimaryKey<ObjectId>
     {
         public Language()

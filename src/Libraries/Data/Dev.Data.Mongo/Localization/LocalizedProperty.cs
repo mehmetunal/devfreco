@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Dev.Data.Mongo.Attributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dev.Data.Mongo.Localization
 {
+    [BsonCollection("dev_localized_property")]
     public class LocalizedProperty : BaseEntity, IPrimaryKey<Guid>
     {
         [Required]
