@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{69FA5BF1-2C7B-4289-B482-0E7F25D41748}"
 EndProject
@@ -41,13 +41,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Services", "Libraries\D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aspect", "Aspect", "{7454A2BA-DA99-452E-9AA1-B047D1D22105}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Aspect.Core", "Libraries\Aspect\Dev.Aspect.Core\Dev.Aspect.Core.csproj", "{D27BF2CD-263E-4674-902D-78858CF822BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Aspect.Core", "Libraries\Aspect\Dev.Aspect.Core\Dev.Aspect.Core.csproj", "{D27BF2CD-263E-4674-902D-78858CF822BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache", "Cache", "{B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Cache", "Libraries\Cache\Dev.Cache\Dev.Cache.csproj", "{98329401-C441-4862-B5CB-C30F9F4E0B90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Cache", "Libraries\Cache\Dev.Cache\Dev.Cache.csproj", "{98329401-C441-4862-B5CB-C30F9F4E0B90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.Cache.Redis", "Libraries\Cache\Dev.Cache.Redis\Dev.Cache.Redis.csproj", "{81D93794-D3DA-4008-B209-FB1CAF578890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Cache.Redis", "Libraries\Cache\Dev.Cache.Redis\Dev.Cache.Redis.csproj", "{81D93794-D3DA-4008-B209-FB1CAF578890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{741851E9-18EE-487B-A6BA-1246176EE291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -146,6 +148,7 @@ Global
 		{B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B} = {69FA5BF1-2C7B-4289-B482-0E7F25D41748}
 		{98329401-C441-4862-B5CB-C30F9F4E0B90} = {B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}
 		{81D93794-D3DA-4008-B209-FB1CAF578890} = {B2E2B8B8-17B6-4D5C-8B71-2E50A2F01A8B}
+		{741851E9-18EE-487B-A6BA-1246176EE291} = {69FA5BF1-2C7B-4289-B482-0E7F25D41748}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EE3ED25-C1C9-4452-AEDD-DBC833CCE8F8}
