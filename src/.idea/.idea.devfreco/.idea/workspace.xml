@@ -34,6 +34,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9cc48abbdbae46be9b3c826b9a65d44b21f78/07/7ebed2e7/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb797389c19f4ddd874a5cda11840aae18000/ea/55e566b3/IGridFSBucket`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ccdd431a754a49928c12626c525fc4dc1bbb88/26/ApiBehaviorOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aaf690882eff4f39953ba99e3e7bde238f800/c5/f3456423/ShellObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zxfzDNHwlUGuKgQ5hdMUtwW1pz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -114,6 +115,7 @@
       <workItem from="1638287029230" duration="768000" />
       <workItem from="1638287919190" duration="567000" />
       <workItem from="1638288497036" duration="1000" />
+      <workItem from="1638728598207" duration="88000" />
     </task>
     <task id="LOCAL-00001" summary="yenilikler eklendi">
       <created>1635412361640</created>

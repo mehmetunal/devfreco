@@ -13,11 +13,9 @@ namespace Dev.Data.Npgsql
     {
         public BaseEntity()
         {
-            ObjectId = Guid.NewGuid();
             CreatedDate = DateTime.UtcNow;
         }
         public TKey Id { get; set; }
-        public Guid ObjectId { get; set; }
         public bool IsPublish { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedDate { get; set; }
