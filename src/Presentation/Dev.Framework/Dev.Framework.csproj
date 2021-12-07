@@ -21,7 +21,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Libraries\Data\Dev.Data\Dev.Data.csproj" />
 		<ProjectReference Include="..\..\Libraries\Dev.Core\Dev.Core.csproj" />
-		<ProjectReference Include="..\..\Libraries\Dto\Dev.Dto.Npgsql\Dev.Dto.Npgsql.csproj" />
 	</ItemGroup>
 
 </Project>

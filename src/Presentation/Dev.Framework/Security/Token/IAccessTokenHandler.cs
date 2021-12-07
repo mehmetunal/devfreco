@@ -1,6 +1,5 @@
 ﻿using Dev.Core.IoC;
-using Dev.Dto.Npgsql.Identity.Token;
-using Dev.Dto.Npgsql.Identity.User;
+using Dev.Framework.Security.Model;
 
 namespace Dev.Framework.Security.Token
 {
@@ -11,8 +10,8 @@ namespace Dev.Framework.Security.Token
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        AccessTokenDto CreateAccessToken(UserDto user);
+        AccessTokenDto CreateAccessToken(object user);
 
-        UserDto GetAccessToken();
+        object GetAccessToken();
     }
 }

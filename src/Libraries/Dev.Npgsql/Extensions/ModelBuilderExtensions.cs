@@ -14,10 +14,6 @@ namespace Dev.Npgsql.Extensions
                 .HasColumnType(ColumnType.Serial)
                 .ValueGeneratedOnAdd();
 
-            builder.Entity<Table>().Property(p => p.ObjectId)
-                .HasColumnType(ColumnType.Uuid)
-                .IsRequired();
-
             builder.Entity<Table>().Property(p => p.CreatedDate)
                 .HasColumnType(ColumnType.Timestamp)
                 .IsRequired();

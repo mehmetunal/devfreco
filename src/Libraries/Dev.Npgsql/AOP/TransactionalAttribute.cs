@@ -1,40 +1,58 @@
 ﻿using AspectCore.DynamicProxy;
 using Dev.Npgsql.UnitOfWork;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dev.Npgsql.AOP
 {
     /// 
     ///Provide transactional consistency for units of work
     /// 
+    #region OLD
+    //public class TransactionalAttribute : AbstractInterceptorAttribute
+    //{
+    //    IUnitOfWork _unitOfWork { get; set; }
+
+    //    public async override Task Invoke(AspectContext context, AspectDelegate next)
+    //    {
+    //        try
+    //        {
+    //            _unitOfWork = context.ServiceProvider.GetService(typeof(IUnitOfWork)) as IUnitOfWork;
+    //            _unitOfWork.BeginNewTransaction();
+    //            await next(context);
+    //            _unitOfWork.SaveChanges();
+    //        }
+    //        catch (Exception)
+    //        {
+    //            _unitOfWork.RollBackTransaction();
+    //            throw;
+    //        }
+    //    }
+    //} 
+    #endregion
     public class TransactionalAttribute : AbstractInterceptorAttribute
     {
-        IUnitOfWork? UnitOfWork { get; set; }
         public async override Task Invoke(AspectContext context, AspectDelegate next)
         {
-            try
+            var dbContext = context.ServiceProvider.GetService(typeof(DbContext)) as DbContext;
+            if (dbContext != null && dbContext.Database.CurrentTransaction == null)
             {
-                UnitOfWork = context.ServiceProvider.GetService(typeof(IUnitOfWork)) as IUnitOfWork;
-                if (UnitOfWork != null)
-                {
-                    await UnitOfWork.BeginNewTransactionAsync();
-                    await next(context);
-                    UnitOfWork.Commit();
-                }
-                else
+                await dbContext.Database.BeginTransactionAsync();
+                try
                 {
                     await next(context);
+                    await dbContext.SaveChangesAsync();
+                    await dbContext.Database.CommitTransactionAsync();
                 }
-
+                catch (Exception ex)
+                {
+                    await dbContext.Database.RollbackTransactionAsync();
+                    throw;
+                }
             }
-            catch (Exception)
+            else
             {
-                if (UnitOfWork != null)
-                {
-                    await UnitOfWork.RollBackTransactionAsync();
-                }
-                throw;
+                await next(context);
             }
         }
-
     }
 }

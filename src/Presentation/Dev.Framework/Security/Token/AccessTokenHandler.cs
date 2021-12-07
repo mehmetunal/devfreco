@@ -1,6 +1,4 @@
-﻿using Dev.Dto.Npgsql.Identity.Token;
-using Dev.Dto.Npgsql.Identity.User;
-using Dev.Framework.Mapper;
+﻿using Dev.Framework.Mapper;
 using Dev.Framework.Security.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -27,7 +25,7 @@ namespace Dev.Framework.Security.Token
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public AccessTokenDto CreateAccessToken(UserDto user)
+        public AccessTokenDto CreateAccessToken(object user)
         {
             //Token Süresi
             var accessTokenExpiration = DateTime.UtcNow.AddDays(_tokenOptions.AccessTokenExpiration);
@@ -51,13 +49,13 @@ namespace Dev.Framework.Security.Token
                 Token = token,
                 RefreshToken = CreateRefreshToke(),
                 Expiration = accessTokenExpiration,
-                User = AutoMapperConfiguration.Mapper.Map<UserDto>(user)
+                User = AutoMapperConfiguration.Mapper.Map<object>(user)
             };
 
             return accessToken;
         }
 
-        public UserDto GetAccessToken()
+        public object GetAccessToken()
         {
             string authorizationHeader = _context.HttpContext.Request.Headers["Authorization"];
 
@@ -74,7 +72,7 @@ namespace Dev.Framework.Security.Token
                     throw new ArgumentNullException($"user");
                 }
 
-                return JsonConvert.DeserializeObject<UserDto>(user);
+                return JsonConvert.DeserializeObject<object>(user);
             }
 
             throw new ArgumentNullException($"accountnumber");
@@ -92,7 +90,7 @@ namespace Dev.Framework.Security.Token
             }
         }
 
-        private IEnumerable<Claim> GetClaim(UserDto userRequest)
+        private IEnumerable<Claim> GetClaim(object userRequest)
         {
             var claims = new List<Claim>()
             {
