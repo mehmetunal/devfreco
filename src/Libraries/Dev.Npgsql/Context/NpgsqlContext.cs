@@ -13,6 +13,7 @@ namespace Dev.Npgsql.Context
         public NpgsqlContext(DbContextOptions<NpgsqlContext> options)
             : base(options)
         {
+            this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             //this.ChangeTracker.LazyLoadingEnabled = false;
         }
         #endregion
