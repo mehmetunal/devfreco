@@ -17,5 +17,9 @@ namespace Dev.Npgsql.UnitOfWork
 
         int SaveChanges();
         Task<int> SaveChangesAsync();
+
+
+        void Commit();
+        Task CommitAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

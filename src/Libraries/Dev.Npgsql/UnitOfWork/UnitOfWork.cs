@@ -136,6 +136,17 @@ namespace Dev.Npgsql.UnitOfWork
             }
         }
 
+
+        public void Commit()
+        {
+            _transaction.Commit();
+        }
+
+        public async Task CommitAsync(CancellationToken cancellationToken = default)
+        {
+            await _transaction.CommitAsync(cancellationToken);
+        }
+
         #endregion
 
         #region DisposingSection
@@ -159,7 +170,6 @@ namespace Dev.Npgsql.UnitOfWork
             // ReSharper disable once GCSuppressFinalizeForTypeWithoutDestructor
             GC.SuppressFinalize(this);
         }
-
         #endregion
     }
 }
