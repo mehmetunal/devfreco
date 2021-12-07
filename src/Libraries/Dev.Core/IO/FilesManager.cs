@@ -1,10 +1,9 @@
-﻿using Dev.Core.IO.Model;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System;
 using System.IO;
-using System.Threading.Tasks;
+using Dev.Core.IO.Model;
+using System.Globalization;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace Dev.Core.IO
 {
@@ -68,7 +67,7 @@ namespace Dev.Core.IO
         /// <exception cref="NotImplementedException"></exception>
         public FileInfo FileRename(string path, string newFileName)
         {
-            FileInfo fileInfo = new FileInfo(path) {Attributes = FileAttributes.Normal};
+            FileInfo fileInfo = new FileInfo(path) { Attributes = FileAttributes.Normal };
             fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, newFileName));
             return fileInfo;
         }
@@ -204,7 +203,7 @@ namespace Dev.Core.IO
             var model = new FileResponseModel();
             model.FileInfo = new FileInfo(file.FileName);
 
-            var fi = new FileInfo(path) {Attributes = FileAttributes.Normal};
+            var fi = new FileInfo(path) { Attributes = FileAttributes.Normal };
 
             System.IO.File.Delete(path);
 
@@ -239,8 +238,8 @@ namespace Dev.Core.IO
                 fs1 = File.Open(newPath, FileMode.Append);
                 fs2 = File.Open(filePath, FileMode.Open);
                 byte[] fs2Content = new byte[fs2.Length];
-                fs2.Read(fs2Content, 0, (int) fs2.Length);
-                fs1.Write(fs2Content, 0, (int) fs2.Length);
+                fs2.Read(fs2Content, 0, (int)fs2.Length);
+                fs1.Write(fs2Content, 0, (int)fs2.Length);
             }
             catch (Exception ex)
             {

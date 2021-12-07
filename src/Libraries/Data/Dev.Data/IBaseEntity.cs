@@ -15,38 +15,35 @@ namespace Dev.Data
         [Column(Order = 0)]
         TKey Id { get; set; }
 
-        [Column(Order = 1)]
-        Guid ObjectId { get; set; }
-
         [DataMember]
         [Required]
-        [Column(Order = 2)]
+        [Column(Order = 1)]
         DateTime CreatedDate { get; set; }
 
         [DataMember]
         [Required]
         [StringLength(50)]
-        [Column(Order = 3)]
+        [Column(Order = 2)]
         string CreatorIP { get; set; }
 
         [DataMember]
         [Required]
         [MaxLength(18)]
-        [Column(Order = 4)]
+        [Column(Order = 3)]
         Guid CreatorUserId { get; set; }
 
         [DataMember]
-        [Column(Order = 5)]
+        [Column(Order = 4)]
         DateTime? ModifiedDate { get; set; }
 
         [DataMember]
         [StringLength(50)]
-        [Column(Order = 6)]
+        [Column(Order = 5)]
         string ModifierIP { get; set; }
 
         [DataMember]
         [MaxLength(18)]
-        [Column(Order = 7)]
+        [Column(Order = 6)]
         Guid? ModifierUserId { get; set; }
     }
 }
