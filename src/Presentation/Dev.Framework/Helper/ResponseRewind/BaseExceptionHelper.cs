@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class BaseExceptionHelper
+    public class BaseResponseHelper
     {
         internal byte[] GetBuffer(Response<object> json)
             => Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(json));
 
         private HttpContext _context;
-        public BaseExceptionHelper(HttpContext context)
+        public BaseResponseHelper(HttpContext context)
         {
             _context = context;
         }

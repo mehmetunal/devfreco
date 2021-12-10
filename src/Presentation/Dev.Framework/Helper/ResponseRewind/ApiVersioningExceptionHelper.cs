@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class ApiVersioningExceptionHelper : BaseExceptionHelper, IExtensionsHelper
+    public class ApiVersioningExceptionHelper : BaseResponseHelper, IExtensionsHelper
     {
         private HttpContext _context;
         public ApiVersioningExceptionHelper(HttpContext context) : base(context)

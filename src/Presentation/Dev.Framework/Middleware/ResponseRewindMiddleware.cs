@@ -39,7 +39,7 @@ namespace Dev.Framework.Middleware
                 var json = await FormatResponse(context);
                 response.Result = JsonConvert.DeserializeObject(json);
                 response.Success = true;
-                await new BaseExceptionHelper(context).Bind(originalBody, response);
+                await new BaseResponseHelper(context).Bind(originalBody, response);
             }
             catch (ArgumentException ex)
             {

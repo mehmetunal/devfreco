@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class ArgumentExceptionHelper : BaseExceptionHelper, IExtensionsHelper
+    public class ArgumentExceptionHelper : BaseResponseHelper, IExtensionsHelper
     {
         private HttpContext _context;
         public ArgumentExceptionHelper(HttpContext context) : base(context)

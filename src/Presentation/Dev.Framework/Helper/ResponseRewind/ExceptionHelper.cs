@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class ExceptionHelper : BaseExceptionHelper, IExtensionsHelper
+    public class ExceptionHelper : BaseResponseHelper, IExtensionsHelper
     {
         private HttpContext _context;
         public ExceptionHelper(HttpContext context) : base(context)

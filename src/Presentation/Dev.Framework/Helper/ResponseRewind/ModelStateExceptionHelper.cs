@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class ModelStateExceptionHelper : BaseExceptionHelper, IExtensionsHelper
+    public class ModelStateExceptionHelper : BaseResponseHelper, IExtensionsHelper
     {
         private HttpContext _context;
         public ModelStateExceptionHelper(HttpContext context) : base(context)

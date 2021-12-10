@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Dev.Framework.Helper.ResponseRewind
 {
-    public class UnauthorizedAccessExceptionHelper : BaseExceptionHelper, IExtensionsHelper
+    public class UnauthorizedAccessExceptionHelper : BaseResponseHelper, IExtensionsHelper
     {
         private HttpContext _context;
 

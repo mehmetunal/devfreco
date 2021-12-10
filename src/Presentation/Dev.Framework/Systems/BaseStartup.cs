@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
 using Dev.Framework.Security.Model;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace Dev.Framework.Systems
 {
@@ -85,6 +86,13 @@ namespace Dev.Framework.Systems
             app.UseCorsConfig();
 
             app.UseMiddleware<ResponseRewindMiddleware>();
+
+            app.UseExceptionHandler(c => c.Run(async context =>
+            {
+                var exception = context.Features.Get<IExceptionHandlerPathFeature>().Error;
+                var response = new { error = exception.Message };
+                await context.Response.WriteAsJsonAsync(response);
+            }));
 
             app.UseAuthentication();
 
