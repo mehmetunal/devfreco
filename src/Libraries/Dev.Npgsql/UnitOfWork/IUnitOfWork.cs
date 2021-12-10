@@ -3,6 +3,7 @@ using Dev.Data.Npgsql;
 using Dev.Core.Entities;
 using Dev.Npgsql.Repository;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Dev.Npgsql.UnitOfWork
 {

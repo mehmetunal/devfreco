@@ -1,6 +1,8 @@
 ﻿using AspectCore.DynamicProxy;
 using Dev.Npgsql.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace Dev.Npgsql.AOP
 {
