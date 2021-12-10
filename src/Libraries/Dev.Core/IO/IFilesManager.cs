@@ -52,6 +52,13 @@ namespace Dev.Core.IO
         /// <param name="newFileName"></param>
         /// <returns></returns>
         FileInfo FileRename(string path, string newFileName);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        FileInfo FileRandomName(string path);
 
         /// <summary>
         /// 

@@ -225,6 +225,17 @@ namespace Dev.Core.IO
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public FileInfo FileRandomName(string path)
+        {
+            string newFileName = Guid.NewGuid().ToString();
+            return this.FileRename(path, newFileName);
+        }
+
+        /// <summary>
         /// MergeChunks
         /// </summary>
         /// <param name="newPath"></param>
