@@ -68,7 +68,7 @@ namespace Dev.Core.IO
         public FileInfo FileRename(string path, string newFileName)
         {
             FileInfo fileInfo = new FileInfo(path) { Attributes = FileAttributes.Normal };
-            fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, newFileName));
+            fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, $"{newFileName}{fileInfo.Extension}"));
             return fileInfo;
         }
 
