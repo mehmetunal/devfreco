@@ -1,5 +1,6 @@
 ﻿using Dev.Core.Base;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -103,6 +104,22 @@ namespace Dev.Framework.HttpClientApi
             return result;
         }
 
+        public virtual async Task<HttpResponseMessage> GetClient(string url, Dictionary<string, string> qParametre = null)
+        {
+            try
+            {
+                //if (qParametre != null)
+                //{
+                //    _queryParametre = qParametre.Union(_queryParametre.Where(k => !qParametre.ContainsKey(k.Key))).ToDictionary(k => k.Key, v => v.Value);
+                //}
+                var requestUri = QueryHelpers.AddQueryString(url, qParametre);
+                return await _httpClient.GetAsync(requestUri);
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         private string GetToken()
         {
