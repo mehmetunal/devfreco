@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Dev.Framework.JsonConverters;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,6 +20,8 @@ namespace Dev.Framework.Extensions
                 options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.AllowTrailingCommas = true;
+                options.JsonSerializerOptions.Converters.Add(new DecimalToStringConverter());
+                options.JsonSerializerOptions.Converters.Add(new TimeSpanConverter());
             });
         }
 
