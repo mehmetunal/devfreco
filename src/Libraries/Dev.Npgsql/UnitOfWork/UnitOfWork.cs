@@ -5,6 +5,7 @@ using Dev.Npgsql.Repository;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Threading;
 
 namespace Dev.Npgsql.UnitOfWork
 {

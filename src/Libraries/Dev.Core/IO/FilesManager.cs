@@ -68,7 +68,7 @@ namespace Dev.Core.IO
         public FileInfo FileRename(string path, string newFileName)
         {
             FileInfo fileInfo = new FileInfo(path) { Attributes = FileAttributes.Normal };
-            fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, newFileName));
+            fileInfo.MoveTo(Path.Combine(fileInfo.Directory.FullName, $"{newFileName}{fileInfo.Extension}"));
             return fileInfo;
         }
 
@@ -222,6 +222,17 @@ namespace Dev.Core.IO
             model.IsSuccess = true;
 
             return model;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public FileInfo FileRandomName(string path)
+        {
+            string newFileName = Guid.NewGuid().ToString();
+            return this.FileRename(path, newFileName);
         }
 
         /// <summary>
