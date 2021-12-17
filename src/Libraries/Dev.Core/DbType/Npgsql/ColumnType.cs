@@ -10,5 +10,12 @@
         public const string Integer = "integer";
         public const string Text = "text";
         public const string Boolean = "boolean";
+        public const string DateTimeOffset = "time with time zone";
+        public const string TimeSpan = "time without time zone";
+        public const string DateTime = "date";
+        public const string Json = "json";
+        public const string Jsonb = "jsonb";
+        public const string Xml = "xml";
+        public const string String = "citext";
     }
 }
