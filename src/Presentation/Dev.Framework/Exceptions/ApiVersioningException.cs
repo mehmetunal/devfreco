@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Dev.Framework.Exceptions
 {
+    [Serializable]
     public class ApiVersioningException : Exception
     {
         public ApiVersioningException()

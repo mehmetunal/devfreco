@@ -1,4 +1,5 @@
-﻿using Dev.Framework.Security.Model;
+﻿using Dev.Framework.Exceptions;
+using Dev.Framework.Security.Model;
 using Dev.Framework.Security.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -57,16 +58,13 @@ namespace Dev.Framework.Extensions
                     {
                         OnAuthenticationFailed = (context) =>
                         {
-                            Console.WriteLine(context.Exception);
-                            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                            context.Response.WriteAsync("401 Unauthorized");
                             throw new UnauthorizedAccessException();
                             return Task.CompletedTask;
                         },
                         OnForbidden = (context) =>
                         {
                             context.Response.StatusCode = StatusCodes.Status403Forbidden;
-                            throw new Exception("Forbidden");
+                            throw new ForbiddenExtension("Forbidden");
                             return Task.CompletedTask;
                         },
                         OnMessageReceived = (context) =>

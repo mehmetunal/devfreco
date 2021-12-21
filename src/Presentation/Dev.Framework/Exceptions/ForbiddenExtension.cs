@@ -4,22 +4,22 @@ using System.Runtime.Serialization;
 namespace Dev.Framework.Exceptions
 {
     [Serializable]
-    public class ModelStateException : Exception
+    public class ForbiddenExtension : Exception
     {
-        public ModelStateException()
+        public ForbiddenExtension()
             : base()
         { }
 
-        public ModelStateException(string message)
+        public ForbiddenExtension(string message)
             : base(message)
 
         { }
 
-        public ModelStateException(string message, Exception innerException)
+        public ForbiddenExtension(string message, Exception innerException)
             : base(message, innerException)
         { }
 
-        protected ModelStateException(SerializationInfo info, StreamingContext context)
+        protected ForbiddenExtension(SerializationInfo info, StreamingContext context)
             : base(info, context)
         { }
     }

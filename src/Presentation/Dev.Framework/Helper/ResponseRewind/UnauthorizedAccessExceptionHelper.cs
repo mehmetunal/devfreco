@@ -20,6 +20,25 @@ namespace Dev.Framework.Helper.ResponseRewind
             response.SystemError = ex.Message;
             response.IsError = true;
             response.StatusCode = StatusCodes.Status401Unauthorized;
+            _context.Response.StatusCode = response.StatusCode;
+            await base.Bind(body, response);
+        }
+    } 
+    public class ForbiddenExtensionHelper : BaseResponseHelper, IExtensionsHelper
+    {
+        private HttpContext _context;
+
+        public ForbiddenExtensionHelper(HttpContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        public async Task Bind(Stream body, Response<object> response, Exception ex)
+        {
+            response.SystemError = ex.Message;
+            response.IsError = true;
+            response.StatusCode = StatusCodes.Status403Forbidden;
+            _context.Response.StatusCode = response.StatusCode;
             await base.Bind(body, response);
         }
     }

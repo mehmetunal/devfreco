@@ -65,6 +65,10 @@ namespace Dev.Framework.Middleware
             {
                 await new ExceptionHelper(context).Bind(originalBody, response, ex);
             }
+            catch (ForbiddenExtension ex)
+            {
+                await new ForbiddenExtensionHelper(context).Bind(originalBody, response, ex);
+            }
             catch (UnauthorizedAccessException ex)
             {
                 await new UnauthorizedAccessExceptionHelper(context).Bind(originalBody, response, ex);

@@ -90,10 +90,11 @@ namespace Dev.Framework.Systems
             app.UseExceptionHandler(c => c.Run(async context =>
             {
                 var exception = context.Features.Get<IExceptionHandlerPathFeature>().Error;
-                var response = new { error = exception.Message };
-                await context.Response.WriteAsJsonAsync(response);
+                throw exception;
+                //var response = new { error = exception.Message };
+                //await context.Response.WriteAsJsonAsync(response);
             }));
-
+            
             app.UseAuthentication();
 
             app.UseAuthorization();
