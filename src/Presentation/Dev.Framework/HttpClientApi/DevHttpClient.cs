@@ -104,7 +104,7 @@ namespace Dev.Framework.HttpClientApi
             return result;
         }
 
-        public virtual async Task<HttpResponseMessage> GetClient(string url, Dictionary<string, string> qParametre = null)
+        public virtual async Task<HttpResponseMessage> GetClientAsync(string url, Dictionary<string, string> qParametre = null)
         {
             try
             {
