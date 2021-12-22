@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using Dev.Framework.Security.Authorization;
 using Dev.Framework.Security.Model;
 using Microsoft.AspNetCore.Builder;
@@ -23,7 +25,7 @@ namespace Dev.Framework.Extensions
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc(apiTokenOptions.ApiVersion, new OpenApiInfo {Title = apiTokenOptions.ApiName, Version = apiTokenOptions.ApiVersion});
+                options.SwaggerDoc(apiTokenOptions.ApiVersion, new OpenApiInfo { Title = apiTokenOptions.ApiName, Version = apiTokenOptions.ApiVersion });
                 if (!string.IsNullOrEmpty(apiTokenOptions.IdentityServerBaseUrl))
                 {
                     options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
@@ -44,6 +46,9 @@ namespace Dev.Framework.Extensions
                     });
                     options.OperationFilter<AuthorizeCheckOperationFilter>();
                 }
+                // using System.Reflection;
+                var xmlFilename = $"{Assembly.GetEntryAssembly().GetName().Name}.json";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
 
 
