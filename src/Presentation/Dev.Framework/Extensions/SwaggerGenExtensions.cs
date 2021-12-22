@@ -46,11 +46,15 @@ namespace Dev.Framework.Extensions
                     });
                     options.OperationFilter<AuthorizeCheckOperationFilter>();
                 }
-                // using System.Reflection;
-                var xmlFilename = $"{Assembly.GetEntryAssembly().GetName().Name}.json";
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
-            });
 
+                // using System.Reflection;
+                var xmlFilename = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+                if (File.Exists(xmlPath))
+                {
+                    options.IncludeXmlComments(xmlPath);
+                }
+            });
 
             return services;
         }
