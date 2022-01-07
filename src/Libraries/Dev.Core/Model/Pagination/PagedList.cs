@@ -119,25 +119,16 @@ namespace Dev.Core.Model.Pagination
         /// </summary>
         public int TotalPages { get; set; }
 
-        /// <summary>
-        /// Next Page
-        /// </summary>
-        public int? NextPage { get; set; }
-
-        /// <summary>
-        /// Previous Page
-        /// </summary>
-        public int? PreviousPage { get; set; }
 
         /// <summary>
         /// Has previous page
         /// </summary>
-        public bool HasPreviousPage => PreviousPage != null && Take > 0;
+        public bool HasPreviousPage => Skip > 0;
 
         /// <summary>
         /// Has next page
         /// </summary>
-        public bool HasNextPage => Take + 1 < TotalPages;
+        public bool HasNextPage => Skip + 1 < TotalPages;
 
         /// <summary>
         /// DB Data

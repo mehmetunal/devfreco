@@ -28,16 +28,6 @@ namespace Dev.Core.Model.Pagination
         int TotalPages { get; }
 
         /// <summary>
-        /// Next Page
-        /// </summary>
-        int? NextPage { get; set; }
-
-        /// <summary>
-        /// Previous Page
-        /// </summary>
-        int? PreviousPage { get; set; }
-
-        /// <summary>
         /// Has previous page
         /// </summary>
         bool HasPreviousPage { get; }
