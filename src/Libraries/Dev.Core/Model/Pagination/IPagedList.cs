@@ -8,14 +8,14 @@ namespace Dev.Core.Model.Pagination
     public interface IPagedList<T>
     {
         /// <summary>
-        /// Skip
+        /// PageIndex
         /// </summary>
-        int Skip { get; }
+        int PageIndex { get; }
 
         /// <summary>
         /// Take
         /// </summary>
-        int Take { get; }
+        int PageSize { get; }
 
         /// <summary>
         /// Total count

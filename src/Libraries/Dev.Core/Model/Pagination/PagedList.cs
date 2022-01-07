@@ -21,17 +21,17 @@ namespace Dev.Core.Model.Pagination
         /// <param name="getOnlyTotalCount">A value in indicating whether you want to load only total number of records. Set to "true" if you don't want to load data from database</param>
         /// <param name="filters">Data Filter </param>
         /// <param name="sorts">Data Sort OrderBy and OrderBy Desc</param>
-        public PagedList(IQueryable<T> source, int skip, int take, List<Filter> filters = null, List<Sort> sorts = null, bool getOnlyTotalCount = false)
+        public PagedList(IQueryable<T> source, int pageIndex, int pageSize, List<Filter> filters = null, List<Sort> sorts = null, bool getOnlyTotalCount = false)
         {
             var total = source.Count();
             TotalCount = total;
-            TotalPages = total / take;
+            TotalPages = total / pageSize;
 
-            if (total % take > 0)
+            if (total % pageSize > 0)
                 TotalPages++;
 
-            Take = take;
-            Skip = skip;
+            PageSize = pageSize;
+            PageIndex = pageIndex;
             if (getOnlyTotalCount)
                 return;
 
@@ -39,7 +39,7 @@ namespace Dev.Core.Model.Pagination
             Sorts = sorts;
 
             #region dxGrid
-            Data = source.AddFilterQuery(Filters).Skip(skip).Take(take).AddSortQuery(Sorts).ToList();
+            Data = source.AddFilterQuery(Filters).Skip(pageIndex).Take(pageSize).AddSortQuery(Sorts).ToList();
             #endregion
 
             #region NormalPage
@@ -55,21 +55,21 @@ namespace Dev.Core.Model.Pagination
         /// <param name="take">Take</param>
         /// <param name="filters">Data Filter </param>
         /// <param name="sorts">Data Sort OrderBy and OrderBy Desc</param>
-        public PagedList(IList<T> source, int skip, int take, List<Filter> filters = null, List<Sort> sorts = null)
+        public PagedList(IList<T> source, int pageIndex, int pageSize, List<Filter> filters = null, List<Sort> sorts = null)
         {
             TotalCount = source.Count;
-            TotalPages = TotalCount / take;
+            TotalPages = TotalCount / pageSize;
 
-            if (TotalCount % take > 0)
+            if (TotalCount % pageSize > 0)
                 TotalPages++;
 
-            Take = take;
-            Skip = skip;
+            PageSize = pageSize;
+            PageIndex = pageIndex;
 
             Filters = filters;
             Sorts = sorts;
 
-            Data = source.AsQueryable().AddFilterQuery(Filters).Skip(skip * take).Take(take).AddSortQuery(Sorts).ToList();
+            Data = source.AsQueryable().AddFilterQuery(Filters).Skip(pageIndex * pageSize).Take(pageSize).AddSortQuery(Sorts).ToList();
         }
 
         /// <summary>
@@ -81,16 +81,16 @@ namespace Dev.Core.Model.Pagination
         /// <param name="totalCount">Total count</param>
         /// <param name="filters">Data Filter </param>
         /// <param name="sorts">Data Sort OrderBy and OrderBy Desc</param>
-        public PagedList(IEnumerable<T> source, int skip, int take, int totalCount, List<Filter> filters = null, List<Sort> sorts = null)
+        public PagedList(IEnumerable<T> source, int pageIndex, int pageSize, int totalCount, List<Filter> filters = null, List<Sort> sorts = null)
         {
             TotalCount = totalCount;
-            TotalPages = TotalCount / take;
+            TotalPages = TotalCount / pageSize;
 
-            if (TotalCount % take > 0)
+            if (TotalCount % pageSize > 0)
                 TotalPages++;
 
-            Take = take;
-            Skip = skip;
+            PageSize = pageSize;
+            PageIndex = pageIndex;
 
             Filters = filters;
             Sorts = sorts;
@@ -100,14 +100,14 @@ namespace Dev.Core.Model.Pagination
 
 
         /// <summary>
-        /// Skip
+        /// PageIndex
         /// </summary>
-        public int Skip { get; set; }
+        public int PageIndex { get; set; }
 
         /// <summary>
-        /// Take
+        /// PageSize
         /// </summary>
-        public int Take { get; set; }
+        public int PageSize { get; set; }
 
         /// <summary>
         /// Total count
@@ -123,12 +123,12 @@ namespace Dev.Core.Model.Pagination
         /// <summary>
         /// Has previous page
         /// </summary>
-        public bool HasPreviousPage => Skip > 0;
+        public bool HasPreviousPage => PageIndex > 0;
 
         /// <summary>
         /// Has next page
         /// </summary>
-        public bool HasNextPage => Skip + 1 < TotalPages;
+        public bool HasNextPage => PageIndex + 1 < TotalPages;
 
         /// <summary>
         /// DB Data
