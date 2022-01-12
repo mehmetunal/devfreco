@@ -116,6 +116,30 @@ namespace Dev.Npgsql.Repository
             return addRangeAsync;
         }
 
+        public int Count()
+            => _dbSet.Count();
+
+        public int Count(Expression<Func<T, bool>> @where)
+            => _dbSet.Count(@where);
+
+        public Task<int> CountAsync()
+            => _dbSet.CountAsync();
+
+        public Task<int> CountAsync(Expression<Func<T, bool>> @where)
+            => _dbSet.CountAsync(@where);
+
+        public bool Any()
+            => _dbSet.Any();
+
+        public bool Any(Expression<Func<T, bool>> @where)
+            => _dbSet.Any(where);
+
+        public Task<bool> AnyAsync()
+            => _dbSet.AnyAsync();
+
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> @where)
+            => _dbSet.AnyAsync(where);
+
         public T Update(T entity)
         {
             if (entity == null)
@@ -233,6 +257,7 @@ namespace Dev.Npgsql.Repository
 
         public async Task<int> ExecuteAsync(string sql, params object[] par)
             => await _context.Database.ExecuteSqlRawAsync(sql, par);
+
 
         #endregion
     }

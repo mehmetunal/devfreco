@@ -98,6 +98,30 @@ namespace Dev.Mongo.Repository
         public async Task<T> FindByIdAsync(object id)
             => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).FirstOrDefaultAsync();
 
+        public int Count()
+            => Table.Count();
+
+        public int Count(Expression<Func<T, bool>> @where)
+            => Table.Count(@where);
+
+        public Task<int> CountAsync()
+            => Table.CountAsync();
+
+        public Task<int> CountAsync(Expression<Func<T, bool>> @where)
+            => Table.CountAsync(@where);
+
+        public bool Any()
+            => Table.Any();
+
+        public bool Any(Expression<Func<T, bool>> @where)
+            => Table.Any(@where);
+
+        public Task<bool> AnyAsync()
+            => Table.AnyAsync();
+
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> @where)
+            => Table.AnyAsync(@where);
+
         public T Add(T entity)
         {
             Collection.InsertOne(entity);
@@ -122,13 +146,13 @@ namespace Dev.Mongo.Repository
 
         public T Update(T entity)
         {
-            Collection.ReplaceOne(r => r.Id == entity.Id, entity, new ReplaceOptions() {IsUpsert = false});
+            Collection.ReplaceOne(r => r.Id == entity.Id, entity, new ReplaceOptions() { IsUpsert = false });
             return entity;
         }
 
         public async Task<T> UpdateAsync(T entity)
         {
-            await Collection.ReplaceOneAsync(r => r.Id == entity.Id, entity, new ReplaceOptions() {IsUpsert = false});
+            await Collection.ReplaceOneAsync(r => r.Id == entity.Id, entity, new ReplaceOptions() { IsUpsert = false });
             return entity;
         }
 

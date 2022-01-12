@@ -58,6 +58,8 @@ namespace Dev.Framework.Extensions
                     {
                         OnAuthenticationFailed = (context) =>
                         {
+                            context.NoResult();
+                            context.Response.Headers.Add("Token-Expired", "true");
                             throw new UnauthorizedAccessException();
                             return Task.CompletedTask;
                         },
@@ -76,7 +78,12 @@ namespace Dev.Framework.Extensions
                             return Task.CompletedTask;
                         },
                         OnTokenValidated = (context) => { return Task.CompletedTask; },
-                        OnChallenge = (context) => { return Task.CompletedTask; }
+                        OnChallenge = (context) =>
+                        {
+                            context.HandleResponse();
+                            throw new UnauthorizedAccessException();
+                            return Task.CompletedTask;
+                        }
                     };
                 });
             return services;

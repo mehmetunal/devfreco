@@ -28,7 +28,8 @@ namespace Dev.Framework.Extensions
                 options.SwaggerDoc(apiTokenOptions.ApiVersion, new OpenApiInfo { Title = apiTokenOptions.ApiName, Version = apiTokenOptions.ApiVersion });
                 if (!string.IsNullOrEmpty(apiTokenOptions.IdentityServerBaseUrl))
                 {
-                    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                    var securityName = "oauth2";
+                    options.AddSecurityDefinition(securityName, new OpenApiSecurityScheme
                     {
                         Type = SecuritySchemeType.OAuth2,
                         Flows = new OpenApiOAuthFlows
@@ -44,6 +45,22 @@ namespace Dev.Framework.Extensions
                             }
                         }
                     });
+                    //options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    //{
+                    //    {
+                    //        new OpenApiSecurityScheme
+                    //        {
+                    //            Reference = new OpenApiReference
+                    //            {
+                    //                Type = ReferenceType.SecurityScheme,
+                    //                Id = securityName,
+                    //            },
+                    //            Scheme =securityName,
+                    //            Name = securityName,
+                    //            In = ParameterLocation.Header,
+                    //        }, new List<string>()
+                    //    },
+                    //});
                     options.OperationFilter<AuthorizeCheckOperationFilter>();
                 }
 

@@ -32,6 +32,21 @@ namespace Dev.Core.Repository
 
         #endregion
 
+        #region Count
+        int Count();
+        int Count(Expression<Func<T, bool>> @where);
+        Task<int> CountAsync();
+        Task<int> CountAsync(Expression<Func<T, bool>> @where);
+        #endregion
+
+        #region Any
+        bool Any();
+        bool Any(Expression<Func<T, bool>> @where);
+        Task<bool> AnyAsync();
+        Task<bool> AnyAsync(Expression<Func<T, bool>> @where);
+        #endregion
+
+
         #region ADD
 
         T Add(T entity);
