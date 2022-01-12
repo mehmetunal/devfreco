@@ -4,6 +4,9 @@ using Dev.Data.Npgsql.Identity;
 using Dev.Data.Npgsql.Location;
 using Dev.Npgsql.Extensions;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Dev.Npgsql.Context
 {
@@ -48,6 +51,7 @@ namespace Dev.Npgsql.Context
             // optionsBuilder.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
         }
+
         #endregion
 
         #region Method
@@ -385,6 +389,13 @@ namespace Dev.Npgsql.Context
             //SEED_DATA
             modelBuilder.Entity<Parameter>().HasData(new Parameter() { }, new Parameter() { });
 
+            //All Decimals will have 18,6 Range
+            //foreach (var property in modelBuilder.Model.GetEntityTypes()
+            //.SelectMany(t => t.GetProperties())
+            //.Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
+            //{
+            //    property.SetColumnType("decimal(18,6)");
+            //}
             base.OnModelCreating(modelBuilder);
         }
         #endregion
