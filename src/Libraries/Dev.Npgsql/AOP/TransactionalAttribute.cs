@@ -44,7 +44,7 @@ namespace Dev.Npgsql.AOP
                     await dbContext.SaveChangesAsync();
                     await dbContext.Database.CommitTransactionAsync();
                 }
-                catch (Exception ex)
+                catch
                 {
                     await dbContext.Database.RollbackTransactionAsync();
                     throw;
