@@ -66,6 +66,17 @@ namespace Dev.Npgsql.Repository
 
             return await FindAllAsync();
         }
+        public T Find(Expression<Func<T, bool>> @where)
+            => _dbSet.FirstOrDefault(where);
+
+        public async Task<T> FindAsync(Expression<Func<T, bool>> @where)
+            => await _dbSet.FirstOrDefaultAsync(where);
+
+        public T FindById(object id)
+            => _dbSet.Find(id);
+
+        public async Task<T> FindByIdAsync(object id)
+            => await _dbSet.FindAsync(id);
 
         public T SingleOrDefault(Expression<Func<T, bool>> @where)
             => _dbSet.SingleOrDefault(where);
@@ -79,17 +90,29 @@ namespace Dev.Npgsql.Repository
         public async Task<T> SingleByIdAsync(object id)
             => await _dbSet.SingleAsync(p => p.Id.Equals(id));
 
-        public T Find(Expression<Func<T, bool>> @where)
-            => _dbSet.FirstOrDefault(where);
+        public int Count()
+            => _dbSet.Count();
 
-        public async Task<T> FindAsync(Expression<Func<T, bool>> @where)
-            => await _dbSet.FirstOrDefaultAsync(where);
+        public int Count(Expression<Func<T, bool>> @where)
+            => _dbSet.Count(@where);
 
-        public T FindById(object id)
-            => _dbSet.Find(id);
+        public Task<int> CountAsync()
+            => _dbSet.CountAsync();
 
-        public async Task<T> FindByIdAsync(object id)
-            => await _dbSet.FindAsync(id);
+        public Task<int> CountAsync(Expression<Func<T, bool>> @where)
+            => _dbSet.CountAsync(@where);
+
+        public bool Any()
+            => _dbSet.Any();
+
+        public bool Any(Expression<Func<T, bool>> @where)
+            => _dbSet.Any(where);
+
+        public Task<bool> AnyAsync()
+            => _dbSet.AnyAsync();
+
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> @where)
+            => _dbSet.AnyAsync(where);
 
         public T Add(T entity)
             => _dbSet.Add(entity).Entity;
@@ -116,30 +139,6 @@ namespace Dev.Npgsql.Repository
             return addRangeAsync;
         }
 
-        public int Count()
-            => _dbSet.Count();
-
-        public int Count(Expression<Func<T, bool>> @where)
-            => _dbSet.Count(@where);
-
-        public Task<int> CountAsync()
-            => _dbSet.CountAsync();
-
-        public Task<int> CountAsync(Expression<Func<T, bool>> @where)
-            => _dbSet.CountAsync(@where);
-
-        public bool Any()
-            => _dbSet.Any();
-
-        public bool Any(Expression<Func<T, bool>> @where)
-            => _dbSet.Any(where);
-
-        public Task<bool> AnyAsync()
-            => _dbSet.AnyAsync();
-
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> @where)
-            => _dbSet.AnyAsync(where);
-
         public T Update(T entity)
         {
             if (entity == null)
@@ -157,7 +156,6 @@ namespace Dev.Npgsql.Repository
                     throw new ArgumentNullException(nameof(entity));
 
                 _dbSet.Update(entity);
-
                 return entity;
             });
 
@@ -258,6 +256,7 @@ namespace Dev.Npgsql.Repository
         public async Task<int> ExecuteAsync(string sql, params object[] par)
             => await _context.Database.ExecuteSqlRawAsync(sql, par);
 
+        public IQueryable<T> Table => _dbSet.AsQueryable();
 
         #endregion
     }

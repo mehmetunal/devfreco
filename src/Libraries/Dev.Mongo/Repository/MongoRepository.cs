@@ -74,18 +74,6 @@ namespace Dev.Mongo.Repository
             return await FindAllAsync();
         }
 
-        public T SingleOrDefault(Expression<Func<T, bool>> @where)
-            => Collection.Find(where).SingleOrDefault();
-
-        public async Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> @where)
-            => await Collection.Find(where).SingleOrDefaultAsync();
-
-        public T SingleById(object id)
-            => Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).Single();
-
-        public async Task<T> SingleByIdAsync(object id)
-            => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).SingleAsync();
-
         public T Find(Expression<Func<T, bool>> @where)
             => Collection.Find(where).FirstOrDefault();
 
@@ -97,6 +85,18 @@ namespace Dev.Mongo.Repository
 
         public async Task<T> FindByIdAsync(object id)
             => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).FirstOrDefaultAsync();
+
+        public T SingleOrDefault(Expression<Func<T, bool>> @where)
+            => Collection.Find(where).SingleOrDefault();
+
+        public async Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> @where)
+            => await Collection.Find(where).SingleOrDefaultAsync();
+
+        public T SingleById(object id)
+            => Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).Single();
+
+        public async Task<T> SingleByIdAsync(object id)
+            => await Collection.Find(p => p.Id == ObjectId.Parse(id.ToString())).SingleAsync();
 
         public int Count()
             => Table.Count();
