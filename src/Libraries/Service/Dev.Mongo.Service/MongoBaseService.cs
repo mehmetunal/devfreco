@@ -1,17 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
+﻿using AutoMapper;
 using Dev.Core.Infrastructure;
 using Dev.Core.Model;
-using Dev.Core.Repository;
 using Dev.Data.Mongo;
 using Dev.Mongo.Model.Pagination;
 using Dev.Mongo.Repository;
 using Microsoft.AspNetCore.Http;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
+using System;
+using System.Threading.Tasks;
 
 namespace Dev.Services
 {
