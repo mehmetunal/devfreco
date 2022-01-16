@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Security.AccessControl;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Dev.Core.IO
 {
@@ -292,6 +292,27 @@ namespace Dev.Core.IO
         byte[] ReadAllBytes(string filePath);
 
         /// <summary>
+        /// Reads the contents of the file into a byte array
+        /// </summary>
+        /// <param name="filePath">The file for reading</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a byte array containing the contents of the file
+        /// </returns>
+        Task<byte[]> ReadAllBytesAsync(string filePath);
+
+        /// <summary>
+        /// Opens a file, reads all lines of the file with the specified encoding, and then closes the file.
+        /// </summary>
+        /// <param name="path">The file to open for reading</param>
+        /// <param name="encoding">The encoding applied to the contents of the file</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a string containing all lines of the file
+        /// </returns>
+        Task<string> ReadAllTextAsync(string path, Encoding encoding);
+
+        /// <summary>
         /// Opens a file, reads all lines of the file with the specified encoding, and then closes the file.
         /// </summary>
         /// <param name="path">The file to open for reading</param>
@@ -315,6 +336,24 @@ namespace Dev.Core.IO
         /// <param name="filePath">The file to write to</param>
         /// <param name="bytes">The bytes to write to the file</param>
         void WriteAllBytes(string filePath, byte[] bytes);
+
+        /// <summary>
+        /// Writes the specified byte array to the file
+        /// </summary>
+        /// <param name="filePath">The file to write to</param>
+        /// <param name="bytes">The bytes to write to the file</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
+        Task WriteAllBytesAsync(string filePath, byte[] bytes);
+
+        /// <summary>
+        /// Creates a new file, writes the specified string to the file using the specified encoding,
+        /// and then closes the file. If the target file already exists, it is overwritten.
+        /// </summary>
+        /// <param name="path">The file to write to</param>
+        /// <param name="contents">The string to write to the file</param>
+        /// <param name="encoding">The encoding to apply to the string</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
+        Task WriteAllTextAsync(string path, string contents, Encoding encoding);
 
         /// <summary>
         /// Creates a new file, writes the specified string to the file using the specified encoding,

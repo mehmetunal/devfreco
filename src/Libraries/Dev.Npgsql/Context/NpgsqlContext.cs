@@ -2,6 +2,7 @@
 using Dev.Data.Npgsql.Enum;
 using Dev.Data.Npgsql.Identity;
 using Dev.Data.Npgsql.Location;
+using Dev.Data.Npgsql.Messages;
 using Dev.Npgsql.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -384,6 +385,10 @@ namespace Dev.Npgsql.Context
 
             #endregion
 
+            #endregion
+
+            #region EMAILSETTING
+            modelBuilder.BaseModelBuilder<EmailAccount>();
             #endregion
 
             //SEED_DATA

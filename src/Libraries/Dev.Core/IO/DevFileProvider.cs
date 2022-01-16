@@ -600,6 +600,61 @@ namespace Dev.Core.IO
             return base.GetFileInfo(subpath);
         }
 
+        /// <summary>
+        /// Reads the contents of the file into a byte array
+        /// </summary>
+        /// <param name="filePath">The file for reading</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a byte array containing the contents of the file
+        /// </returns>
+        public virtual async Task<byte[]> ReadAllBytesAsync(string filePath)
+        {
+            return File.Exists(filePath) ? await File.ReadAllBytesAsync(filePath) : Array.Empty<byte>();
+        }
+
+        /// <summary>
+        /// Opens a file, reads all lines of the file with the specified encoding, and then closes the file.
+        /// </summary>
+        /// <param name="path">The file to open for reading</param>
+        /// <param name="encoding">The encoding applied to the contents of the file</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains a string containing all lines of the file
+        /// </returns>
+        public virtual async Task<string> ReadAllTextAsync(string path, Encoding encoding)
+        {
+            await using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var streamReader = new StreamReader(fileStream, encoding);
+
+            return await streamReader.ReadToEndAsync();
+        }
+
+        /// <summary>
+        /// Writes the specified byte array to the file
+        /// </summary>
+        /// <param name="filePath">The file to write to</param>
+        /// <param name="bytes">The bytes to write to the file</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
+        public virtual async Task WriteAllBytesAsync(string filePath, byte[] bytes)
+        {
+            await File.WriteAllBytesAsync(filePath, bytes);
+        }
+
+        /// <summary>
+        /// Creates a new file, writes the specified string to the file using the specified encoding,
+        /// and then closes the file. If the target file already exists, it is overwritten.
+        /// </summary>
+        /// <param name="path">The file to write to</param>
+        /// <param name="contents">The string to write to the file</param>
+        /// <param name="encoding">The encoding to apply to the string</param>
+        /// <returns>A task that represents the asynchronous operation</returns>
+        public virtual async Task WriteAllTextAsync(string path, string contents, Encoding encoding)
+        {
+            await File.WriteAllTextAsync(path, contents, encoding);
+        }
+
+
         #endregion
 
         protected string WebRootPath { get; }
