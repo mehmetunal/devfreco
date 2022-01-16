@@ -48,16 +48,20 @@ namespace Dev.Services
 
         public virtual async Task<PagedList<TResultDto>> GetAsync(int pageIndex = 0, int pageSize = int.MaxValue, bool showHidden = false)
         {
-            var query = Repository.Table;
+
+            var builder = Builders<TTable>.Filter;
+            var filter = builder.Where(c => true);
 
             if (!showHidden)
-                query = query.Where(p => p.IsPublish);
+                filter = filter & builder.Where(p => p.IsPublish);
 
-            query = query.Where(p => !p.IsDeleted);
+            filter = filter & builder.Where(p => !p.IsDeleted);
 
-            query = query.OrderBy(v => v.DisplayOrder);
+            var builderSort = Builders<TTable>.Sort.Descending(x => x.DisplayOrder);
 
-            var result = await PagedList<TTable>.Create(query, pageIndex, pageSize);
+            var query = Repository.Collection;
+
+            var result = await PagedList<TTable>.Create(query, filter, builderSort, pageIndex, pageSize);
 
             return Mapper.Map<PagedList<TResultDto>>(result);
         }
