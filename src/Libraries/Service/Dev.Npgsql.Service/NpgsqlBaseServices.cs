@@ -64,6 +64,22 @@ namespace Dev.Npgsql.Service
             return await result;
         }
 
+        public virtual async Task<PagedList<TResultDto>> GetAsync(PaginationFilter paginationFilter, bool showHidden = false)
+        {
+            var query = Repository.Table;
+
+            if (!showHidden)
+                query = query.Where(p => p.IsPublish);
+
+            query = query.Where(p => !p.IsDeleted);
+
+            query = query.OrderBy(v => v.DisplayOrder);
+
+            var result = query.ProjectTo<TResultDto>(AutoMapperConfiguration.MapperConfiguration).ToPagedListAsync(paginationFilter);
+
+            return await result;
+        }
+
         public virtual async Task<TResultDto> GetByIdAsync(Guid id)
         {
             var result = await Repository.FindByIdAsync(id);
