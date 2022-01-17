@@ -138,7 +138,18 @@ namespace Dev.Npgsql.Repository
             await _dbSet.AddRangeAsync(addRangeAsync);
             return addRangeAsync;
         }
-
+        /// <summary>
+        ///     if (order != null)
+        //    {
+        //        await _context.Entry(order)
+        //            .Collection(i => i.OrderItems).LoadAsync();
+        //    await _context.Entry(order)
+        //            .Reference(i => i.OrderStatus).LoadAsync();
+        //}
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public T Update(T entity)
         {
             if (entity == null)

@@ -57,17 +57,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Npgsql.Service", "Libra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{D3832EBA-203F-4F21-943B-7060F0AF6941}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus", "Libraries\EventBus\Dev.EventBus\Dev.EventBus.csproj", "{AD1F470E-B794-41DF-AAE4-DF09D369C9A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.EventBus", "Libraries\EventBus\Dev.EventBus\Dev.EventBus.csproj", "{AD1F470E-B794-41DF-AAE4-DF09D369C9A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus.RabbitMQ", "Libraries\EventBus\Dev.EventBus.RabbitMQ\Dev.EventBus.RabbitMQ.csproj", "{18A6FE85-1B78-407A-9E87-0B297D4AA6AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.EventBus.RabbitMQ", "Libraries\EventBus\Dev.EventBus.RabbitMQ\Dev.EventBus.RabbitMQ.csproj", "{18A6FE85-1B78-407A-9E87-0B297D4AA6AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{AFE3D338-C78B-40AA-9FDF-AAA170A98FAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus.Example.Publish", "Example\Dev.EventBus.Example.Publish\Dev.EventBus.Example.Publish.csproj", "{A1BD0F47-50AA-436B-A7E2-BC0338F6E250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.EventBus.Example.Publish", "Example\Dev.EventBus.Example.Publish\Dev.EventBus.Example.Publish.csproj", "{A1BD0F47-50AA-436B-A7E2-BC0338F6E250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus.IoC", "Libraries\EventBus\Dev.EventBus.IoC\Dev.EventBus.IoC.csproj", "{9723B17F-B31E-4161-BE44-65E02E9F1090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.EventBus.IoC", "Libraries\EventBus\Dev.EventBus.IoC\Dev.EventBus.IoC.csproj", "{9723B17F-B31E-4161-BE44-65E02E9F1090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus.Example.Subscribe", "Example\Dev.EventBus.Example.Subscribe\Dev.EventBus.Example.Subscribe.csproj", "{B152066D-68BA-406B-9EE4-A84F4D8AF731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.EventBus.Example.Subscribe", "Example\Dev.EventBus.Example.Subscribe\Dev.EventBus.Example.Subscribe.csproj", "{B152066D-68BA-406B-9EE4-A84F4D8AF731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev.EventBus.ServiceBus", "Libraries\EventBus\Dev.EventBus.ServiceBus\Dev.EventBus.ServiceBus.csproj", "{C4D0F483-EA89-459C-8469-4CE1B4A89935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +169,10 @@ Global
 		{B152066D-68BA-406B-9EE4-A84F4D8AF731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B152066D-68BA-406B-9EE4-A84F4D8AF731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B152066D-68BA-406B-9EE4-A84F4D8AF731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D0F483-EA89-459C-8469-4CE1B4A89935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D0F483-EA89-459C-8469-4CE1B4A89935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D0F483-EA89-459C-8469-4CE1B4A89935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D0F483-EA89-459C-8469-4CE1B4A89935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -204,6 +210,7 @@ Global
 		{A1BD0F47-50AA-436B-A7E2-BC0338F6E250} = {AFE3D338-C78B-40AA-9FDF-AAA170A98FAE}
 		{9723B17F-B31E-4161-BE44-65E02E9F1090} = {D3832EBA-203F-4F21-943B-7060F0AF6941}
 		{B152066D-68BA-406B-9EE4-A84F4D8AF731} = {AFE3D338-C78B-40AA-9FDF-AAA170A98FAE}
+		{C4D0F483-EA89-459C-8469-4CE1B4A89935} = {D3832EBA-203F-4F21-943B-7060F0AF6941}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9EE3ED25-C1C9-4452-AEDD-DBC833CCE8F8}
