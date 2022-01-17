@@ -1,8 +1,8 @@
-﻿using Dev.Data.Npgsql.Messages;
+﻿using Dev.Data.Mongo.Messages;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Dev.Npgsql.Services.Messages
+namespace Dev.Mongo.Services.Messages
 {
     /// <summary>
     /// Email account service

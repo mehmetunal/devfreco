@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dev.Data.Npgsql.Messages
+namespace Dev.Data.Mongo.Messages
 {
     /// <summary>
     /// Represents an email account

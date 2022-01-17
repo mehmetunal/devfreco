@@ -1,14 +1,14 @@
 ﻿using Dev.Core.Exceptions;
 using Dev.Core.Helper;
-using Dev.Data.Npgsql.Messages;
-using Dev.Npgsql.Repository;
-using Dev.Npgsql.Services.Messages;
+using Dev.Data.Mongo.Messages;
+using Dev.Mongo.Repository;
+using Dev.Mongo.Services.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dev.Npgsql.Service.Messages
+namespace Dev.Mongo.Service.Messages
 {
     /// <summary>
     /// Email account service
@@ -16,13 +16,13 @@ namespace Dev.Npgsql.Service.Messages
     public partial class EmailAccountService : IEmailAccountService
     {
         #region Fields
-        private readonly INpgsqlRepository<EmailAccount> _emailAccountRepository;
+        private readonly IMongoRepository<EmailAccount> _emailAccountRepository;
 
         #endregion
 
         #region Ctor
 
-        public EmailAccountService(INpgsqlRepository<EmailAccount> emailAccountRepository)
+        public EmailAccountService(IMongoRepository<EmailAccount> emailAccountRepository)
         {
             _emailAccountRepository = emailAccountRepository;
         }

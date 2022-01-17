@@ -41,11 +41,6 @@ namespace Dev.Services
 
         #region Method
 
-        public virtual async Task<int> CountAsync()
-        {
-            return await Repository.Table.CountAsync();
-        }
-
         public virtual async Task<PagedList<TResultDto>> GetAsync(int pageIndex = 0, int pageSize = int.MaxValue, bool showHidden = false)
         {
 
@@ -70,6 +65,11 @@ namespace Dev.Services
         {
             var result = await Repository.FindByIdAsync(id);
             return Mapper.Map<TResultDto>(result);
+        }
+
+        public virtual async Task<int> CountAsync()
+        {
+            return await Repository.Table.CountAsync();
         }
 
         public virtual async Task<TResultDto> AddAsync(TAddDto companyAddDto)
