@@ -1,4 +1,7 @@
-﻿namespace Dev.EventBus.ServiceBus
+﻿using Azure.Messaging.ServiceBus;
+using Azure.Messaging.ServiceBus.Administration;
+
+namespace Dev.EventBus.ServiceBus
 {
     public class DefaultServiceBusPersisterConnection : IServiceBusPersisterConnection
     {
