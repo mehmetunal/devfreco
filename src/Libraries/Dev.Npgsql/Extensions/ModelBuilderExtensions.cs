@@ -10,6 +10,14 @@ namespace Dev.Npgsql.Extensions
         {
             builder.Entity<Table>().HasKey(p => p.Id);
 
+            /*
+             HasDefaultValue(true);
+             modelBuilder.Entity<Company>()
+                         .HasMany(c => c.Employees)
+                         .WithOne(e => e.Company)
+                         .HasConstraintName("MyFKConstraint");
+             
+             */
             //IsUnique  => Benzersiz değerse indexde bunu ekleyebiliriz.
             //builder.Entity<Table>()
             //   .HasIndex(p => new { p.CreatedDate, p.ModifiedDate }, name: $"IX_{nameof(Table)}_CreatedDate");

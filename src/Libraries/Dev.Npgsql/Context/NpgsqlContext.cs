@@ -59,7 +59,7 @@ namespace Dev.Npgsql.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
+            
             #region ENUM
             #region PARAMETER
 
