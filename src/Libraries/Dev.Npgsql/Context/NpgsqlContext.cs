@@ -58,6 +58,8 @@ namespace Dev.Npgsql.Context
         #region Method
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
             #region ENUM
             #region PARAMETER
 
@@ -402,6 +404,8 @@ namespace Dev.Npgsql.Context
             //    property.SetColumnType("decimal(18,6)");
             //}
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.HasPostgresExtension("uuid-ossp");
         }
         #endregion
     }

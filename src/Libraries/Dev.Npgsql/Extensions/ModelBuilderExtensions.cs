@@ -10,8 +10,19 @@ namespace Dev.Npgsql.Extensions
         {
             builder.Entity<Table>().HasKey(p => p.Id);
 
-            builder.Entity<Table>().Property(p => p.Id)
-                .HasColumnType(ColumnType.Serial)
+            //IsUnique  => Benzersiz değerse indexde bunu ekleyebiliriz.
+            //builder.Entity<Table>()
+            //   .HasIndex(p => new { p.CreatedDate, p.ModifiedDate }, name: $"IX_{nameof(Table)}_CreatedDate");
+
+            builder.Entity<Table>()
+                .HasIndex(p => p.CreatedDate, name: $"IX_{nameof(Table)}_CreatedDate");
+            builder.Entity<Table>()
+                .HasIndex(p => p.IsDeleted, name: $"IX_{nameof(Table)}_IsDeleted");
+            builder.Entity<Table>()
+                .HasIndex(p => p.IsPublish, name: $"IX_{nameof(Table)}_IsPublish");
+
+
+            builder.Entity<Table>().Property(p => p.Id).HasDefaultValueSql("uuid_generate_v1()")
                 .ValueGeneratedOnAdd();
 
             builder.Entity<Table>().Property(p => p.CreatedDate)
@@ -24,8 +35,6 @@ namespace Dev.Npgsql.Extensions
                 .IsRequired();
 
             builder.Entity<Table>().Property(p => p.CreatorUserId)
-                .HasColumnType(ColumnType.Numeric)
-                .HasPrecision(18, 0)
                 .IsRequired();
 
             builder.Entity<Table>().Property(p => p.ModifiedDate)
@@ -35,9 +44,7 @@ namespace Dev.Npgsql.Extensions
                 .HasColumnType(ColumnType.Varchar)
                 .HasMaxLength(50);
 
-            builder.Entity<Table>().Property(p => p.ModifierUserId)
-                .HasColumnType(ColumnType.Numeric)
-                .HasPrecision(18, 0);
+            builder.Entity<Table>().Property(p => p.ModifierUserId);
 
 
             return builder;
