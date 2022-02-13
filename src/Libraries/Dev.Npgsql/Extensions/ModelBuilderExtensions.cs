@@ -62,25 +62,82 @@ namespace Dev.Npgsql.Extensions
 
         }
 
+
         public static async Task EnableIdentityInsertAsync<T>(this DbContext context) => await SetIdentityInsertAsync<T>(context, true);
         public static async Task DisableIdentityInsertAsync<T>(this DbContext context) => await SetIdentityInsertAsync<T>(context, false);
-
         private static async Task SetIdentityInsertAsync<T>([NotNull] DbContext context, bool enable)
         {
+            //alter table public.category drop constraint "PK_category"
+            //ALTER TABLE public.category ADD CONSTRAINT "PK_category"  PRIMARY KEY("Id");
+
             if (context == null) throw new ArgumentNullException(nameof(context));
+
             var entityType = context.Model.FindEntityType(typeof(T));
-            var value = enable ? "ON" : "OFF";
-            await context.Database.ExecuteSqlRawAsync($"SET IDENTITY_INSERT {entityType.GetSchema()}.{entityType.GetTableName()} {value}");
+
+            var primaryKey = entityType.FindPrimaryKey();
+            var primaryKeyDefaultName = primaryKey.GetDefaultName();
+
+            var schema = entityType.GetSchema();
+            var tableName = entityType.GetTableName();
+            var storeObjectIdentifier = Microsoft.EntityFrameworkCore.Metadata.StoreObjectIdentifier.Table(tableName, schema);
+            var primaryKeyColumnName = primaryKey.Properties
+                .Select(x => x.GetColumnName(storeObjectIdentifier))
+                .FirstOrDefault();
+
+
+            var tb = $"{tableName}";
+            if (!string.IsNullOrEmpty(schema))
+            {
+                tb = $"{schema}.{tableName}";
+            }
+
+            if (enable == true)
+            {
+                await context.Database.ExecuteSqlRawAsync($"alter table {tb} drop constraint \"{primaryKeyDefaultName}\"");
+            }
+            else
+            {
+                await context.Database.ExecuteSqlRawAsync($"alter table {tb} ADD constraint \"{primaryKeyDefaultName}\" PRIMARY KEY(\"{primaryKeyColumnName}\")");
+            }
         }
 
         public static void EnableIdentityInsert<T>(this DbContext context) => SetIdentityInsert<T>(context, true);
         public static void DisableIdentityInsert<T>(this DbContext context) => SetIdentityInsert<T>(context, false);
         private static void SetIdentityInsert<T>([NotNull] DbContext context, bool enable)
         {
+            //alter table public.category drop constraint "PK_category"
+            //ALTER TABLE public.category ADD CONSTRAINT "PK_category"  PRIMARY KEY("Id");
+
             if (context == null) throw new ArgumentNullException(nameof(context));
+
             var entityType = context.Model.FindEntityType(typeof(T));
-            var value = enable ? "ON" : "OFF";
-            context.Database.ExecuteSqlRaw($"SET IDENTITY_INSERT {entityType.GetSchema()}.{entityType.GetTableName()} {value}");
+
+            var primaryKey = entityType.FindPrimaryKey();
+            var primaryKeyDefaultName = primaryKey.GetDefaultName();
+
+            var schema = entityType.GetSchema();
+            var tableName = entityType.GetTableName();
+            var storeObjectIdentifier = Microsoft.EntityFrameworkCore.Metadata.StoreObjectIdentifier.Table(tableName, schema);
+            var primaryKeyColumnName = primaryKey.Properties
+                .Select(x => x.GetColumnName(storeObjectIdentifier))
+                .FirstOrDefault();
+
+
+            var tb = $"{tableName}";
+            if (!string.IsNullOrEmpty(schema))
+            {
+                tb = $"{schema}.{tableName}";
+            }
+
+            if (enable == true)
+            {
+                context.Database.ExecuteSqlRaw($"alter table {tb} drop constraint \"{primaryKeyDefaultName}\"");
+            }
+            else
+            {
+                context.Database.ExecuteSqlRaw($"alter table {tb} ADD constraint \"{primaryKeyDefaultName}\" PRIMARY KEY(\"{primaryKeyColumnName}\")");
+                //context.Database.ExecuteSqlRaw($"alter table {tb} ALTER COLUMN \"{primaryKeyColumnName}\" SET DATA TYPE UUID USING(uuid_generate_v4())");
+            }
         }
     }
 }
