@@ -23,7 +23,7 @@ namespace Dev.Core.Model.Pagination
         /// <param name="sorts">Data Sort OrderBy and OrderBy Desc</param>
         public PagedList(IQueryable<T> source, int pageIndex, int pageSize, List<Filter> filters = null, List<Sort> sorts = null, bool getOnlyTotalCount = false)
         {
-            var total = source.Count();
+            var total = source.AddFilterQuery(filters).Count();
             TotalCount = total;
             TotalPages = total / pageSize;
 
@@ -34,6 +34,9 @@ namespace Dev.Core.Model.Pagination
             PageIndex = pageIndex;
             if (getOnlyTotalCount)
                 return;
+
+            if (filters.Count() > 0 && pageIndex > total)
+                pageIndex = total - 1;
 
             Filters = filters;
             Sorts = sorts;
@@ -57,7 +60,7 @@ namespace Dev.Core.Model.Pagination
         /// <param name="sorts">Data Sort OrderBy and OrderBy Desc</param>
         public PagedList(IList<T> source, int pageIndex, int pageSize, List<Filter> filters = null, List<Sort> sorts = null)
         {
-            TotalCount = source.Count;
+            TotalCount = source.AsQueryable().AddFilterQuery(filters).Count();
             TotalPages = TotalCount / pageSize;
 
             if (TotalCount % pageSize > 0)
@@ -65,6 +68,9 @@ namespace Dev.Core.Model.Pagination
 
             PageSize = pageSize;
             PageIndex = pageIndex;
+
+            if (filters.Count() > 0 && pageIndex > TotalCount)
+                pageIndex = TotalCount - 1;
 
             Filters = filters;
             Sorts = sorts;
