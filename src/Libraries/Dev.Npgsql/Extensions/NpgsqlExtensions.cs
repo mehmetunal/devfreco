@@ -31,6 +31,7 @@ namespace Dev.Npgsql.Extensions
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<TContext>();
                 context.Database.EnsureCreated();
+                //context.Database.Migrate();
             }
 
             return app;
@@ -51,6 +52,7 @@ namespace Dev.Npgsql.Extensions
             {
                 var context = services.GetRequiredService<TContext>();
                 context.Database.EnsureCreated();
+                //context.Database.Migrate();
                 logger.LogInformation("Database migration completed.");
             }
             catch (Exception ex)
