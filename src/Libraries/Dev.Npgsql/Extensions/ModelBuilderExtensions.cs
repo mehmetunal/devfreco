@@ -1,6 +1,9 @@
 ﻿using Dev.Data.Npgsql;
 using Dev.Core.DbType.Npgsql;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
+using System;
 
 namespace Dev.Npgsql.Extensions
 {
