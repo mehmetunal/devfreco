@@ -51,7 +51,9 @@ namespace Dev.Npgsql.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseLazyLoadingProxies();
+            //optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
             optionsBuilder.LogTo(Console.WriteLine);
+            optionsBuilder.EnableSensitiveDataLogging();
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -61,7 +63,7 @@ namespace Dev.Npgsql.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-            
+
             #region ENUM
             #region PARAMETER
 
