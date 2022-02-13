@@ -5,6 +5,7 @@ using Dev.Data.Npgsql.Location;
 using Dev.Data.Npgsql.Messages;
 using Dev.Npgsql.Extensions;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -50,6 +51,7 @@ namespace Dev.Npgsql.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseLazyLoadingProxies();
+            optionsBuilder.LogTo(Console.WriteLine);
             base.OnConfiguring(optionsBuilder);
         }
 
