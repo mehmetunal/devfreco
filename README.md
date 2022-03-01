@@ -1,3 +1,3 @@
 # devfreco
 
-#.net 6
+#.net 5
