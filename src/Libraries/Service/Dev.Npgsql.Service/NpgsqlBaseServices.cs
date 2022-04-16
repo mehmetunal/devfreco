@@ -129,6 +129,38 @@ namespace Dev.Npgsql.Service
             return Mapper.Map<TResultDto>(result);
         }
 
+        /*Sadece değişen gincellenmesini istiyorsak*/
+        //public virtual async Task<TResultDto> UpdateAsync(TEditDto tEditDto)
+        //{
+        //    if (tEditDto == null)
+        //        throw new ArgumentNullException($"{nameof(tEditDto)}");
+
+        //    var domainEntity = Mapper.Map<TTable>(tEditDto);
+
+        //    var dbData = await Repository.FindByIdAsync(domainEntity.Id);
+        //    if (dbData == null)
+        //        throw new ArgumentNullException($"{domainEntity.Id} is null data");
+
+
+        //    dbData daki propertylere tEditDto içinceki propertyleri atmamız yeterli  savechange TransactionalAttribute yapıyor
+        //    dbContext ctr  this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking; kaldırmamız gerekecek
+
+        //    //var mapperData = Mapper.Map(domainEntity, dbData);
+
+        //    //mapperData.ModifiedDate = DateTime.UtcNow;
+        //    //mapperData.ModifierIP = RemoteIp;
+
+        //    //if (string.IsNullOrEmpty(mapperData.CreatorIP))
+        //    //    mapperData.CreatorIP = RemoteIp;
+
+        //    //// event notification
+        //    //// await _mediator.EntityUpdated(vendor);
+
+        //    //var result = await Repository.UpdateAsync(mapperData);
+
+        //    //return Mapper.Map<TResultDto>(result);
+        //}
+
         public virtual async Task<TResultDto> DeleteAsync(Guid id)
         {
             var result = await Repository.DeleteAsync(id);
