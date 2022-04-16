@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Diagnostics.CodeAnalysis;
 using System;
+using System.Linq;
 
 namespace Dev.Npgsql.Extensions
 {
